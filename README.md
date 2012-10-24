@@ -1,6 +1,6 @@
 #Apaxy
 
-Apaxy is a simple, customisable theme for your Apache directory listing. Turn [this](http://bukk.it) into [this](http://adamwhitcroft.com/apaxy/demo).
+Apaxy is a simple, customisable theme for your Apache directory listing. Turn [this](http://bukk.it) into [this]().
 
 ##Installation
 
