@@ -7,7 +7,7 @@ Apaxy is a simple, customisable theme for your Apache directory listing. Turn [t
 Apaxy is simple to install, all you need is a server running Apache and FTP access to the folder you'd like use.
 
 * Download and unzip.
-* Copy the contents of `apaxy` to the folder on your server you're going to use as the listing directory.
+* Copy the contents of `/apaxy` to the folder on your server you're going to use as the listing directory.
 * Rename `htaccess.txt` to `.htaccess` in both the main and `/theme` folder.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
