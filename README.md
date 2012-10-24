@@ -7,15 +7,13 @@ Apaxy is a simple, customisable theme for your Apache directory listing. Turn [t
 Apaxy is simple to install, all you need is a server running Apache and FTP access to the folder you'd like use.
 
 * Download and unzip.
-* Copy the contents of the `apaxy` folder (`htaccess.txt` and `/theme`) in to a folder on your server you're going to use as the listing directory.
+* Copy the contents of `apaxy` to the folder on your server you're going to use as the listing directory.
 * Rename `htaccess.txt` to `.htaccess` in both the main and `/theme` folder.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
-##Apaxy themes
+##Styling Apaxy
 
-Apaxy comes with a pretty good looking theme, but if you'd like to edit it to suit your own style that's easy enough.
-
-Look in the `/theme` folder and you'll find the following files:
+If you'd like to edit the appearance of Apaxy, look in the `/theme` folder for the ollowing files:
 
 * `header.html`
 * `footer.html`
@@ -44,4 +42,4 @@ The default Apaxy theme `/themes/apaxy` has icons in place for the following mim
 
 Apaxy owes it's existence to the amazing [h5ai](http://larsjung.de/h5ai/) by [Lars Jung](https://twitter.com/lrsjng). Had I not seen this, I would never have looked into making my own version.
 
-[Faenza Icons](http://tiheum.deviantart.com/art/Faenza-Icons-173323228) are used in the `apaxy` theme.
+Icons are the [Faenza Icons](http://tiheum.deviantart.com/art/Faenza-Icons-173323228).
