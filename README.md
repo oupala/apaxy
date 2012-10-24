@@ -8,7 +8,7 @@ Apaxy is simple to install, all you need is a server running Apache and FTP acce
 
 * Download and unzip.
 * Open the `/themes` folder and - from the theme you'd like to use - copy the `htaccess.txt` file and `/style` folder and drop them into the directory you'd like to use for your Apaxy listing.
-* Open the `htaccess.txt` in the main folder and do a search and replace, substituting `{dir folder}` with the name of your Apaxy listing folder.
+* Open the `htaccess.txt` in the main folder and do a search and replace, substituting `{FOLDERNAME}` with the name of your Apaxy listing folder.
 * Rename `htaccess.txt` to `.htaccess` in both the main and `/style` folder.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
@@ -28,7 +28,7 @@ Sadly not much can be done to alter the `<table>` structure, but that's about th
 
 To add in your own icons, you'll need to edit the `.htaccess` file in the _main_ directory.
 
-    AddIcon /{dir folder}/style/icons/gif.png .gif
+    AddIcon /{FOLDERNAME}/style/icons/gif.png .gif
 
 The above rule will assign an icon named `gif.png` from the directory `/{dir folder}/style/icons/` to any file with the `.gif` extension.
 
@@ -36,7 +36,11 @@ The above rule will assign an icon named `gif.png` from the directory `/{dir fol
 
 The default Apaxy theme `/themes/apaxy` has icons in place for the following mime types:
 
-    .aif .aif .asf .asx .avi .bin .c .css .csv .dmg .doc .docm .docx .dot .dotm .eps .flv .gif .htm .html .ico .iff .jar .jpeg .jpg .js .json .log .m3u .m4a .md .mid .mov .mp3 .mp4 .mpa .mpg .msg .mwa .odt .pages .pdf .pkg .png .ps .psd .ra .rar .rb .rm .rss .rtf .shtml .sql .srt .swf .tex .tiff .txt .vob .wav .wmv .wpd .wps .xhtml .xlam .xlr .xls .xlsm .xlsx .xltm .xltx .xml .zip
+    .aif .aif .asf .asx .avi .bin .c .css .csv .dmg .doc .docm .docx .dot .dotm .eps .flv .gif 
+    .htm .html .ico .iff .jar .jpeg .jpg .js .json .log .m3u .m4a .md .mid .mov .mp3 .mp4 .mpa 
+    .mpg .msg .mwa .odt .pages .pdf .pkg .png .ps .psd .ra .rar .rb .rm .rss .rtf .shtml 
+    .sql .srt .swf .tex .tiff .txt .vob .wav .wmv .wpd .wps .xhtml .xlam .xlr .xls .xlsm .xlsx 
+    .xltm .xltx .xml .zip
 
 
 ###Credits
