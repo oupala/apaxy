@@ -1,0 +1,9 @@
+#
+#	Apaxy by @adamwhitcroft
+#
+#	For a full breakdown of the mod_autoindex module"
+#	http://apache.org/docs/2.2/mod/mod_autoindex.html
+#
+
+#	Don't index this folder
+Options -Indexes

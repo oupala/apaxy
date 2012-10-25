@@ -1,0 +1,72 @@
+#
+# Apaxy by @adamwhitcroft
+#
+# For a full breakdown of the mod_autoindex module:
+# http://apache.org/docs/2.2/mod/mod_autoindex.html
+#
+
+	# ENABLE INDEXING
+	Options +Indexes
+
+	# INDEX OPTIONS
+	IndexOptions +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription
+
+	# HIDE /theme DIRECTORY
+	IndexIgnore .htaccess /theme
+
+#
+# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
+#
+
+#
+# Replace {FOLDERNAME} with your directory URL eg:
+# http://mywebsite.com/share/ 
+#
+
+	AddIcon /{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
+	AddIcon /{FOLDERNAME}/theme/icons/folder.png ^^DIRECTORY^^
+	AddIcon /{FOLDERNAME}/theme/icons/folder-home.png ..
+
+#
+# EXTENSION SPECIFIC ICONS
+#
+	
+	AddIcon /{FOLDERNAME}/theme/icons/audio.png .aif .iff .m3u .m4a .mid .mp3 .mpa .ra .wav .wma
+	AddIcon /{FOLDERNAME}/theme/icons/bin.png .bin
+	AddIcon /{FOLDERNAME}/theme/icons/c.png .c
+	AddIcon /{FOLDERNAME}/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv 
+	AddIcon /{FOLDERNAME}/theme/icons/css.png .css
+	AddIcon /{FOLDERNAME}/theme/icons/doc.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	AddIcon /{FOLDERNAME}/theme/icons/draw.png .svg
+	AddIcon /{FOLDERNAME}/theme/icons/eps.png .ai .eps
+	AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
+	AddIcon /{FOLDERNAME}/theme/icons/html.png .html .xhtml .shtml .htm
+	AddIcon /{FOLDERNAME}/theme/icons/ico.png .ico
+	AddIcon /{FOLDERNAME}/theme/icons/java.png .jar
+	AddIcon /{FOLDERNAME}/theme/icons/jpg.png .jpg .jpeg
+	AddIcon /{FOLDERNAME}/theme/icons/js.png .js .json
+	AddIcon /{FOLDERNAME}/theme/icons/markdown.png .md
+	AddIcon /{FOLDERNAME}/theme/icons/package.png .pkg .dmg 
+	AddIcon /{FOLDERNAME}/theme/icons/pdf.png .pdf
+	AddIcon /{FOLDERNAME}/theme/icons/php.png .php
+	AddIcon /{FOLDERNAME}/theme/icons/png.png .png
+	AddIcon /{FOLDERNAME}/theme/icons/ps.png .ps
+	AddIcon /{FOLDERNAME}/theme/icons/psd.png .psd
+	AddIcon /{FOLDERNAME}/theme/icons/rar.png .rar
+	AddIcon /{FOLDERNAME}/theme/icons/rb.png .rb
+	AddIcon /{FOLDERNAME}/theme/icons/rss.png .rss
+	AddIcon /{FOLDERNAME}/theme/icons/sql.png .sql
+	AddIcon /{FOLDERNAME}/theme/icons/tiff.png .tiff
+	AddIcon /{FOLDERNAME}/theme/icons/text.png .txt
+	AddIcon /{FOLDERNAME}/theme/icons/video.png .asf .asx .avi .flv .mov .mp4 .mpg .rm .srt .swf .vob .wmv
+	AddIcon /{FOLDERNAME}/theme/icons/xml.png .xml
+	AddIcon /{FOLDERNAME}/theme/icons/zip.png .zip
+	DefaultIcon /{FOLDERNAME}/theme/icons/default.png
+
+#
+# THEME FILES
+#
+
+	HeaderName /{FOLDERNAME}/theme/header.html
+	ReadmeName /{FOLDERNAME}/theme/footer.html
+	IndexStyleSheet "/{FOLDERNAME}/theme/style.css"
