@@ -23,6 +23,7 @@ Let's assume you have a folder named `share` in your server root directory (the 
 * Copy and paste the contents of the `/apaxy` folder to your `/share` folder.
 * Edit `htaccess.txt` (now in the `/share` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
 
+
     AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
 
 Should be changed to...
