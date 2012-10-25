@@ -20,7 +20,10 @@
 
 #
 # Replace {FOLDERNAME} with your directory URL eg:
-# http://mywebsite.com/share/ 
+# If your directory is http://mywebsite.com/share/
+# you would change to:
+#
+# AddIcon /share/theme/icons/blank.png ^^BLANKICON^^
 #
 
 	AddIcon /{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
