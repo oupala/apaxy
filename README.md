@@ -23,11 +23,11 @@ Let's assume you have a folder named `share` in your server root directory (the 
 * Copy and paste the contents of the `/apaxy` folder to your `/share` folder.
 * Edit `htaccess.txt` (now in the `/share` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
 
-AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
+    AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
 
 Should be changed to...
 
-AddIcon /share/theme/icons/gif.png .gif
+    AddIcon /share/theme/icons/gif.png .gif
 
 * Once done, rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
