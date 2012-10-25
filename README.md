@@ -36,21 +36,21 @@ Should be changed to...
 
 ##Apaxy themes
 
-Apaxy comes with a pretty good looking theme, but if you'd like to edit it to suit your own style that's easy enough.
-
-Look in the `/theme` folder and you'll find the following files:
+If you'd like to alter the default Apaxy theme, look in the `/theme` folder and you'll find the following files:
 
 * `header.html`
 * `footer.html`
 * `style.css`
 
-Go nuts. Sadly not much can be done to alter the `<table>` structure.
+Edit these as you would any other HTML or CSS file.
 
-Adding your own icons is a little more involved. You'll need to edit the `.htaccess` file in your main directory. Look for the following as an example:
+Adding your own icons is a little more involved. You'll need to edit the main Apaxy `.htaccess` file. Look for the following as an example:
 
-    AddIcon /{your_folder}/theme/icons/gif.png .gif
+    AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
 
-The above rule will assign an icon named `gif.png` from the directory `/{your_folder}/theme/icons/` to any file with the `.gif` extension.
+The above rule will assign an icon named `gif.png` from the directory `/{FOLDERNAME}/theme/icons/` to any file with the `.gif` extension.
+
+This URL path is relative to your site's root.
 
 ##Mime Types
 
