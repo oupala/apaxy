@@ -1,19 +1,42 @@
 #Apaxy
 
-Apaxy is a simple, customisable theme for your Apache directory listing. Turn [this](http://bukk.it) into [this]().
+Apaxy is a customisable theme built to enhance the experience of browsing web directories. It uses the `mod_autoindex` Apache module—and some CSS—to override the default style of a directory listing.
+
+##Features
+
+Apaxy may be basic, but it gives you a great deal of creative freedom when styling your directory.
+
+* Style your directory listing with CSS.
+* Make it pop with Javascript or jQuery.
+* Add welcome messages, download instructions or copyright notices.
+* Add custom mime type icons (requires editing the `.htaccess` file)
+
+_Sadly, visual style is all you can work with. It's not possible to alter the generated table structure of the listing directory with Apaxy._
 
 ##Installation
 
-Apaxy is simple to install, all you need is a server running Apache and FTP access to the folder you'd like use.
+Apaxy requires an Apache(2.0.23+) enabled HTTP server.
 
-* Download and unzip.
-* Copy the contents of `/apaxy` to the folder on your server you're going to use as the listing directory.
-* Rename `htaccess.txt` to `.htaccess` in both the main and `/theme` folder.
+Let's assume you have a folder named `share` in your server root directory (the path thus being `http://mywebsite.com/share`) that you'd like to use as your listing directory:
+
+* Download and unzip Apaxy
+* Copy and paste the contents of the `/apaxy` folder to your `/share` folder.
+* Edit `htaccess.txt` (now in the `/share` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
+
+    AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
+
+Should be changed to...
+
+    AddIcon /share/theme/icons/gif.png .gif
+
+* Once done, rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
-##Styling Apaxy
+##Apaxy themes
 
-If you'd like to edit the appearance of Apaxy, look in the `/theme` folder for the ollowing files:
+Apaxy comes with a pretty good looking theme, but if you'd like to edit it to suit your own style that's easy enough.
+
+Look in the `/theme` folder and you'll find the following files:
 
 * `header.html`
 * `footer.html`
@@ -42,4 +65,4 @@ The default Apaxy theme `/themes/apaxy` has icons in place for the following mim
 
 Apaxy owes it's existence to the amazing [h5ai](http://larsjung.de/h5ai/) by [Lars Jung](https://twitter.com/lrsjng). Had I not seen this, I would never have looked into making my own version.
 
-Icons are the [Faenza Icons](http://tiheum.deviantart.com/art/Faenza-Icons-173323228).
+[Faenza Icons](http://tiheum.deviantart.com/art/Faenza-Icons-173323228) are used in the `apaxy` theme.
