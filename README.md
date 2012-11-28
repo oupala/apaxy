@@ -9,7 +9,6 @@ Apaxy is a customisable theme built to enhance the experience of browsing web di
 Apaxy may be basic, but it gives you a great deal of creative freedom when styling your directory.
 
 * Style your directory listing with CSS.
-* Make it pop with Javascript or jQuery.
 * Add welcome messages, download instructions or copyright notices.
 * Add custom mime type icons (requires editing the `.htaccess` file)
 
