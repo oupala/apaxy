@@ -9,5 +9,6 @@
 </div><!--/.footer-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script>
-$('tr:nth-child(2)').addClass('parent');
+    if ($('tr:nth-child(2) td:nth-child(2) a').text() == "Parent Directory")
+        $('tr:nth-child(2)').addClass('parent');
 </script>
