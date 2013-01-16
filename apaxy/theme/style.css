@@ -17,7 +17,8 @@
 
 html {
 	min-height:100%;
-	border:10px solid #ECEEF1;
+	border-top:10px solid #ECEEF1;
+	border-bottom:10px solid #ECEEF1;
 	color:#61666c;
 	font-weight:400;
 	font-size:1em;
@@ -44,7 +45,7 @@ a:hover {
 .wrapper {
 	margin:0 auto;
 	padding-top:20px;
-	max-width:900px;
+	max-width:500px;
 }
 /*------------------------------------*\
     Demo block
@@ -102,6 +103,9 @@ td {
 	    -ms-transition:background 300ms ease;
 	     -o-transition:background 300ms ease;
 	        transition:background 300ms ease;
+}
+td a{
+	display: block;
 }
 tr.parent a {
 	color:#9099A3;
