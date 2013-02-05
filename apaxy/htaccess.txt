@@ -61,7 +61,7 @@
 	AddIcon /{FOLDERNAME}/theme/icons/sql.png .sql
 	AddIcon /{FOLDERNAME}/theme/icons/tiff.png .tiff
 	AddIcon /{FOLDERNAME}/theme/icons/text.png .txt
-	AddIcon /{FOLDERNAME}/theme/icons/video.png .asf .asx .avi .flv .mov .mp4 .mpg .rm .srt .swf .vob .wmv
+	AddIcon /{FOLDERNAME}/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv
 	AddIcon /{FOLDERNAME}/theme/icons/xml.png .xml
 	AddIcon /{FOLDERNAME}/theme/icons/zip.png .zip
 	DefaultIcon /{FOLDERNAME}/theme/icons/default.png
