@@ -9,7 +9,7 @@
 	Options +Indexes
 
 	# INDEX OPTIONS
-	IndexOptions +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=*
+	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=*
 
 	# HIDE /theme DIRECTORY
 	IndexIgnore .htaccess /theme
