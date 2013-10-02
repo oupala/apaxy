@@ -23,7 +23,7 @@
 # If your directory is http://mywebsite.com/share/
 # you would change to:
 #
-# AddIcon /share/theme/icons/blank.png ^^BLANKICON^^
+# AddIcon /share/{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
 #
 
 	AddIcon /{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
@@ -34,7 +34,7 @@
 # EXTENSION SPECIFIC ICONS
 #
 
-	AddIcon /{FOLDERNAME}/theme/icons/audio.png .aif .iff .m3u .m4a .mid .mp3 .mpa .ra .wav .wma
+	AddIcon /{FOLDERNAME}/theme/icons/audio.png .aif .iff .m3u .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg
 	AddIcon /{FOLDERNAME}/theme/icons/bin.png .bin
 	AddIcon /{FOLDERNAME}/theme/icons/c.png .c
 	AddIcon /{FOLDERNAME}/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
@@ -52,7 +52,7 @@
 	AddIcon /{FOLDERNAME}/theme/icons/markdown.png .md
 	AddIcon /{FOLDERNAME}/theme/icons/package.png .pkg .dmg
 	AddIcon /{FOLDERNAME}/theme/icons/pdf.png .pdf
-	AddIcon /{FOLDERNAME}/theme/icons/php.png .php
+	AddIcon /{FOLDERNAME}/theme/icons/php.png .php .phtml
 	AddIcon /{FOLDERNAME}/theme/icons/png.png .png
 	AddIcon /{FOLDERNAME}/theme/icons/ps.png .ps
 	AddIcon /{FOLDERNAME}/theme/icons/psd.png .psd
@@ -62,8 +62,8 @@
 	AddIcon /{FOLDERNAME}/theme/icons/rss.png .rss
 	AddIcon /{FOLDERNAME}/theme/icons/sql.png .sql
 	AddIcon /{FOLDERNAME}/theme/icons/tiff.png .tiff
-	AddIcon /{FOLDERNAME}/theme/icons/text.png .txt
-	AddIcon /{FOLDERNAME}/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv
+	AddIcon /{FOLDERNAME}/theme/icons/text.png .txt .nfo
+	AddIcon /{FOLDERNAME}/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
 	AddIcon /{FOLDERNAME}/theme/icons/xml.png .xml
 	AddIcon /{FOLDERNAME}/theme/icons/zip.png .zip
 	DefaultIcon /{FOLDERNAME}/theme/icons/default.png
