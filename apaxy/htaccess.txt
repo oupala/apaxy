@@ -75,3 +75,40 @@
 	HeaderName /{FOLDERNAME}/theme/header.html
 	ReadmeName /{FOLDERNAME}/theme/footer.html
 	IndexStyleSheet "/{FOLDERNAME}/theme/style.css"
+	
+#
+# Force files to download (not open in browser)
+#
+
+	AddType application/octet-stream .aif .iff .m3u .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg
+	AddType application/octet-stream .bin
+	AddType application/octet-stream .c
+	AddType application/octet-stream .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+#	AddType application/octet-stream .css
+	AddType application/octet-stream .deb
+	AddType application/octet-stream .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	AddType application/octet-stream .svg
+	AddType application/octet-stream .ai .eps
+#	AddType application/octet-stream .gif
+#	AddType application/octet-stream .html .xhtml .shtml .htm
+	AddType application/octet-stream .ico
+	AddType application/octet-stream .jar
+#	AddType application/octet-stream .jpg .jpeg
+#	AddType application/octet-stream .js .json
+#	AddType application/octet-stream .md
+	AddType application/octet-stream .pkg .dmg
+#	AddType application/octet-stream .pdf
+	AddType application/octet-stream .php .phtml
+#	AddType application/octet-stream .png
+	AddType application/octet-stream .ps
+	AddType application/octet-stream .psd
+	AddType application/octet-stream .rar
+	AddType application/octet-stream .rb
+	AddType application/octet-stream .rpm
+#	AddType application/octet-stream .rss
+	AddType application/octet-stream .sql
+	AddType application/octet-stream .tiff
+#	AddType application/octet-stream .txt .nfo
+	AddType application/octet-stream .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
+#	AddType application/octet-stream .xml
+	AddType application/octet-stream .zip
