@@ -8,6 +8,13 @@
 	Apaxy by <a href="https://twitter.com/adamwhitcroft">@adamwhitcroft</a>
 </div><!--/.footer-->
 <script>
+var metacontent = 'width=device-width',
+	metaTag = document.createElement('meta');
+
+metaTag.name = 'viewport';
+metaTag.content = metacontent;
+document.getElementsByTagName('head')[0].appendChild(metaTag);
+
 // grab the 2nd child and add the parent class. tr:nth-child(2)
 document.getElementsByTagName('tr')[1].className = 'parent';
 </script>
