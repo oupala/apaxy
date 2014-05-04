@@ -24,6 +24,7 @@ html {
 	font-size:1em;
 	font-family:'Open Sans', sans-serif;
 	line-height:2em;
+	width: 100%;
 }
 body {
 	padding:20px;
@@ -45,7 +46,7 @@ a:hover {
 .wrapper {
 	margin:0 auto;
 	padding-top:20px;
-	max-width:500px;
+	max-width:80%;
 }
 /*------------------------------------*\
     Demo block
