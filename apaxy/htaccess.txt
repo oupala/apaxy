@@ -11,6 +11,9 @@
 	# INDEX OPTIONS
 	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=*
 
+    # META VIEWPORT
+    IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+
 	# HIDE /theme DIRECTORY
 	IndexIgnore .htaccess /theme
 
