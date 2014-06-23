@@ -107,10 +107,10 @@ td {
 td a{
 	display: block;
 }
-tr.parent a {
+tr.parent a[href^="/"] {
 	color:#9099A3;
 }
-	.parent a:hover {
+	.parent a[href^="/"]:hover {
 		color:#2281d0;
 	}
 /*------------------------------------*\
