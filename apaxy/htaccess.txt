@@ -1,21 +1,16 @@
+<IfModule mod_autoindex.c>
 #
 # Apaxy by @adamwhitcroft
+# Edit by github@dkavraal
 #
 # For a full breakdown of the mod_autoindex module:
-# http://apache.org/docs/2.2/mod/mod_autoindex.html
+# http://apache.org/docs/2.4/mod/mod_autoindex.html
 #
-
-	# ENABLE INDEXING
-	Options +Indexes
-
-	# INDEX OPTIONS
-	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks
+	IndexOptions FancyIndexing HTMLTable DescriptionWidth=* NameWidth=* Charset=UTF-8 IgnoreCase FoldersFirst XHTML IconsAreLinks
 
     # META VIEWPORT
     IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-
-	# HIDE /theme DIRECTORY
-	IndexIgnore .htaccess /theme
+    IndexOrderDefault Ascending Description
 
 #
 # GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
@@ -79,6 +74,26 @@
 	AddIcon /{FOLDERNAME}/theme/icons/zip.png .zip
 	DefaultIcon /{FOLDERNAME}/theme/icons/default.png
 
+	IndexIgnore .??* *~ *# RCS CVS *,v *,t
+
+
+        AddDescription "Compressed gz"    *.gz *.tgz 
+        AddDescription "Compressed zip"   *.zip *.Z
+        AddDescription "Compressed rar"   *.rar *.0??
+        AddDescription "Compressed bzip2" *.tbz2 *.bz2
+        AddDescription "Compressed 7zip"  *.7z
+        AddDescription "Compressed tar"   *.tar
+        AddDescription "Compressed X"     *.x *.xz *.tarx
+        AddDescription "Compressed Mac"   *.pkg
+        AddDescription CD-DVD     *.iso *.img *.dmg *.cur
+        AddDescription torrent    *.torrent
+        AddDescription "Document pdf"     *.pdf
+	AddDescription "Document epub"    *.epub
+	AddDescription "Script"           *.exe *.sh *.bat *.cmd *.run
+	AddDescription "ZZ _ URL File"    *.url
+	AddDescription "ZZ _ HTML File"   *.html *.htm *.php*
+	
+
 #
 # THEME FILES
 #
@@ -86,3 +101,4 @@
 	HeaderName /{FOLDERNAME}/theme/header.html
 	ReadmeName /{FOLDERNAME}/theme/footer.html
 	IndexStyleSheet "/{FOLDERNAME}/theme/style.css"
+</IfModule>
