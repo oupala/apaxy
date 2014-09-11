@@ -45,7 +45,7 @@ a:hover {
 .wrapper {
 	margin:0 auto;
 	padding-top:20px;
-	max-width:500px;
+/*	max-width:500px;*/
 }
 /*------------------------------------*\
     Demo block
@@ -82,11 +82,19 @@ th + th {
 }
 /* 3rd Column: Last Modified */
 th + th + th {
+	width:10%;
+	min-width:116px;
 }
 /* 4th Column: Size */
 th + th + th + th {
-	width:5%;
+	width:3%;
+	min-width: 55px;
 }
+th + th + th + th + th {
+        width:13%;
+	min-width: 150px;
+}
+
 tr td:first-of-type {
 	padding-left:10px;
 	padding-right:10px;
