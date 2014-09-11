@@ -1,4 +1,8 @@
-#Apaxy
+#Edit Changelog on original repos
+Only changed inside htaccess.txt which could be used now for all apache sovereignty inside /etc/apache2/mods-enabled/autoindex.conf (mostly).
+
+
+##Apaxy
 
 Demo: [adamwhitcroft.com/apaxy](http://adamwhitcroft.com/apaxy/)
 
