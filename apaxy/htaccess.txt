@@ -11,8 +11,8 @@
 	# INDEX OPTIONS
 	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks
 
-    # META VIEWPORT
-    IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+	# META VIEWPORT
+	IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
 
 	# HIDE /theme DIRECTORY
 	IndexIgnore .htaccess /theme
@@ -26,7 +26,7 @@
 # If your directory is http://mywebsite.com/share/
 # you would change to:
 #
-# AddIcon /share/{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
+# AddIcon /share/theme/icons/blank.png ^^BLANKICON^^
 #
 
 	AddIcon /{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
