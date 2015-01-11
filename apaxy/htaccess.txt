@@ -48,6 +48,7 @@
 	AddIcon /{FOLDERNAME}/theme/icons/bmp.png .bmp
 	AddIcon /{FOLDERNAME}/theme/icons/c.png .c
 	AddIcon /{FOLDERNAME}/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /{FOLDERNAME}/theme/icons/cd.png .iso
 	AddIcon /{FOLDERNAME}/theme/icons/cpp.png .cpp
 	AddIcon /{FOLDERNAME}/theme/icons/css.png .css .sass .scss
 	AddIcon /{FOLDERNAME}/theme/icons/deb.png .deb
