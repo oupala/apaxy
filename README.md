@@ -17,7 +17,7 @@ _Sadly, visual style is all you can work with. It's not possible to alter the ge
 
 ##Installation
 
-Apaxy requires an Apache(2.0.23+) enabled HTTP server.
+Apaxy requires an Apache(2.2.11+) enabled HTTP server.
 
 Let's assume you have a folder named `share` in your server root directory (the path thus being `http://mywebsite.com/share`) that you'd like to use as your listing directory:
 
