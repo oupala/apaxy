@@ -32,6 +32,11 @@
 	AddIcon /{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
 	AddIcon /{FOLDERNAME}/theme/icons/folder.png ^^DIRECTORY^^
 	AddIcon /{FOLDERNAME}/theme/icons/folder-home.png ..
+	
+	AddIconByType (TXT,/{FOLDERNAME}/theme/icons/text.png) text/*
+	AddIconByType (IMG,/{FOLDERNAME}/theme/icons/image.png) image/*
+	AddIconByType (SND,/{FOLDERNAME}/theme/icons/audio.png) audio/*
+	AddIconByType (VID,/{FOLDERNAME}/theme/icons/video.png) video/*
 
 #
 # EXTENSION SPECIFIC ICONS
