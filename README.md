@@ -58,8 +58,8 @@ This URL path is relative to your site's root.
 
 The default Apaxy theme `/themes/apaxy` has icons in place for the following mime types:
 
-    .aif .aif .asf .asx .avi .bin .c .css .csv .dmg .doc .docm .docx .dot .dotm .eps .flv .gif 
-    .htm .html .ico .iff .jar .jpeg .jpg .js .json .log .m3u .m4a .md .mid .mov .mp3 .mp4 .mpa 
+    .aif .aif .asf .asx .avi .bin .c .crx .css .csv .dmg .doc .docm .docx .dot .dotm .eps .flv .gif 
+    .htm .html .ico .iff .iso .jar .jpeg .jpg .js .json .log .m3u .m4a .md .mid .mov .mp3 .mp4 .mpa 
     .mpg .msg .mwa .odt .pages .pdf .pkg .png .ps .psd .ra .rar .rb .rm .rss .rtf .shtml 
     .sql .srt .swf .tex .tiff .txt .vob .wav .wmv .wpd .wps .xhtml .xlam .xlr .xls .xlsm .xlsx 
     .xltm .xltx .xml .zip
