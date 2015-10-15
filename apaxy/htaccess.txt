@@ -11,8 +11,8 @@
 	# INDEX OPTIONS
 	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks
 
-    # META VIEWPORT
-    IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+    	# META VIEWPORT
+    	IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
 
 	# HIDE /theme DIRECTORY
 	IndexIgnore .htaccess /theme
@@ -26,12 +26,17 @@
 # If your directory is http://mywebsite.com/share/
 # you would change to:
 #
-# AddIcon /share/{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
+# AddIcon /share/theme/icons/blank.png ^^BLANKICON^^
 #
 
 	AddIcon /{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
 	AddIcon /{FOLDERNAME}/theme/icons/folder.png ^^DIRECTORY^^
 	AddIcon /{FOLDERNAME}/theme/icons/folder-home.png ..
+	
+	AddIconByType (TXT,/{FOLDERNAME}/theme/icons/text.png) text/*
+	AddIconByType (IMG,/{FOLDERNAME}/theme/icons/image.png) image/*
+	AddIconByType (SND,/{FOLDERNAME}/theme/icons/audio.png) audio/*
+	AddIconByType (VID,/{FOLDERNAME}/theme/icons/video.png) video/*
 
 #
 # EXTENSION SPECIFIC ICONS
@@ -43,6 +48,7 @@
 	AddIcon /{FOLDERNAME}/theme/icons/bmp.png .bmp
 	AddIcon /{FOLDERNAME}/theme/icons/c.png .c
 	AddIcon /{FOLDERNAME}/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /{FOLDERNAME}/theme/icons/cd.png .iso
 	AddIcon /{FOLDERNAME}/theme/icons/cpp.png .cpp
 	AddIcon /{FOLDERNAME}/theme/icons/css.png .css .sass .scss
 	AddIcon /{FOLDERNAME}/theme/icons/deb.png .deb

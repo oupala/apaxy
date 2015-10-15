@@ -17,11 +17,11 @@ _Sadly, visual style is all you can work with. It's not possible to alter the ge
 
 ##Installation
 
-Apaxy requires an Apache(2.0.23+) enabled HTTP server.
+Apaxy requires an Apache(2.2.11+) enabled HTTP server.
 
 Let's assume you have a folder named `share` in your server root directory (the path thus being `http://mywebsite.com/share`) that you'd like to use as your listing directory:
 
-* Download and unzip Apaxy
+* [Download](https://github.com/AdamWhitcroft/Apaxy/archive/master.zip) and unzip Apaxy
 * Copy and paste the contents of the `/apaxy` folder to your `/share` folder.
 * Edit `htaccess.txt` (now in the `/share` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
 
