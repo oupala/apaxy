@@ -36,6 +36,10 @@ a {
 	color:#61666c;
 	text-decoration:none;
 }
+a, img {
+        border:none;
+        outline:none
+}
 a:hover {
 	color:#2a2a2a;
 }
