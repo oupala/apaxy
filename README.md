@@ -28,7 +28,7 @@ Let's assume you have a folder named `share` in your server root directory (the 
 
 ##Docker iamges
 
-A [local Demo](localhost:8080) can be started with docker.
+A [local Demo](http://localhost:8080) can be started with docker.
 `docker-compose build`
 `docker-compose up`
 
