@@ -26,6 +26,13 @@ Let's assume you have a folder named `share` in your server root directory (the 
 * Rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
+##Docker iamges
+
+A [localhost:8080](local Demo) can be started with docker.
+`docker-compose build
+docker-compose up`
+
+
 ##Apaxy themes
 
 If you'd like to alter the default Apaxy theme, look in the `/theme` folder and you'll find the following files:
