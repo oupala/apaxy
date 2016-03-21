@@ -26,7 +26,7 @@ Let's assume you have a folder named `share` in your server root directory (the 
 * Rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
-##Docker iamges
+##Docker images
 
 A [local Demo](http://localhost:8080) can be started with docker.
 `docker-compose build`
