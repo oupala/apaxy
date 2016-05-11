@@ -52,6 +52,22 @@ a:hover {
 	max-width:500px;
 }
 /*------------------------------------*\
+    Filter (search box)
+\*------------------------------------*/
+#filter {
+        float: right;
+        font-size:.75em;
+        padding: .5em;
+        margin-bottom: .5em;
+        border: 1px solid #aaa;
+        border-radius: .25em;
+        width: 10em;
+        transition: width 0.25s ease;
+}
+#filter:focus {
+        width: 14em;
+}
+/*------------------------------------*\
     Demo block
 \*------------------------------------*/
 .block {

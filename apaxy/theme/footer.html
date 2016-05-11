@@ -8,6 +8,50 @@
 	Apaxy by <a href="https://twitter.com/adamwhitcroft">@adamwhitcroft</a>
 </div><!--/.footer-->
 <script type="text/javascript">
-// grab the 2nd child and add the parent class. tr:nth-child(2)
-document.getElementsByTagName('tr')[1].className = 'parent';
+	// grab the 2nd child and add the parent class. tr:nth-child(2)
+	document.getElementsByTagName('tr')[1].className = 'parent';
+
+	// content filtering, based on "light javascript table filter" by Chris Coyier
+	// https://codepen.io/chriscoyier/pen/tIuBL - MIT License
+	(function(document) {
+                'use strict';
+
+                var TableFilter = (function(Arr) {
+
+                        var _input;
+
+                        function _onInputEvent(e) {
+                                _input = e.target;
+                                var tables = document.getElementsByTagName('table');
+                                Arr.forEach.call(tables, function(table) {
+                                        Arr.forEach.call(table.tBodies, function(tbody) {
+                                                Arr.forEach.call(tbody.rows, _filter);
+                                        });
+                                });
+                        }
+
+                        function _filter(row) {
+                                if (row.className === 'indexhead') {
+                                        return;
+                                }
+                                var text = row.getElementsByClassName('indexcolname')[0].textContent.toLowerCase();
+                                var val = _input.value.toLowerCase();
+                                row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+                        }
+
+                        return {
+                                init: function() {
+                                        document.getElementById('filter').oninput = _onInputEvent;
+                                }
+                        };
+
+                })(Array.prototype);
+
+                document.addEventListener('readystatechange', function() {
+                        if (document.readyState === 'complete') {
+                                TableFilter.init();
+                        }
+                });
+
+        })(document);
 </script>
