@@ -31,7 +31,7 @@
                         }
 
                         function _filter(row) {
-                                if (row.className === 'indexhead') {
+                                if (row.className === 'indexhead' || row.className === 'parent') {
                                         return;
                                 }
                                 var text = row.getElementsByClassName('indexcolname')[0].textContent.toLowerCase();
