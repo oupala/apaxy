@@ -8,9 +8,6 @@
 	Apaxy by <a href="https://twitter.com/adamwhitcroft">@adamwhitcroft</a>
 </div><!--/.footer-->
 <script type="text/javascript">
-	// grab the 2nd child and add the parent class. tr:nth-child(2)
-	document.getElementsByTagName('tr')[1].className = 'parent';
-
 	// content filtering, based on "light javascript table filter" by Chris Coyier
 	// https://codepen.io/chriscoyier/pen/tIuBL - MIT License
 	(function(document) {
@@ -31,7 +28,7 @@
                         }
 
                         function _filter(row) {
-                                if (row.className === 'indexhead' || row.className === 'parent') {
+                                if (row.className.indexOf('indexhead') != -1 || row.className.indexOf('parent') != -1) {
                                         return;
                                 }
                                 var text = row.getElementsByClassName('indexcolname')[0].textContent.toLowerCase();
@@ -49,6 +46,12 @@
 
                 document.addEventListener('readystatechange', function() {
                         if (document.readyState === 'complete') {
+				// grab the 2nd child and add the parent class. tr:nth-child(2)
+				var secondRow = document.getElementsByTagName('tr')[1];
+				var secondRowName = secondRow.getElementsByClassName('indexcolname')[0].textContent;
+                                if (secondRowName === 'Parent Directory') {
+					secondRow.className += ' parent';
+				}
                                 TableFilter.init();
                         }
                 });
