@@ -11,60 +11,60 @@
 	// content filtering, based on "light javascript table filter" by Chris Coyier
 	// https://codepen.io/chriscoyier/pen/tIuBL - MIT License
 	(function(document) {
-                'use strict';
+		'use strict';
 
-                var TableFilter = (function(Arr) {
+		var TableFilter = (function(Arr) {
 
 			// the search bar element
-                        var _input;
+			var _input;
 
 			// find all rows of all tables and call _filter on them
-                        function _onInputEvent(e) {
-                                _input = e.target;
-                                var tables = document.getElementsByTagName('table');
-                                Arr.forEach.call(tables, function(table) {
-                                        Arr.forEach.call(table.tBodies, function(tbody) {
-                                                Arr.forEach.call(tbody.rows, _filter);
-                                        });
-                                });
-                        }
+			function _onInputEvent(e) {
+				_input = e.target;
+				var tables = document.getElementsByTagName('table');
+				Arr.forEach.call(tables, function(table) {
+					Arr.forEach.call(table.tBodies, function(tbody) {
+						Arr.forEach.call(tbody.rows, _filter);
+					});
+				});
+			}
 
 			// show or hide a row based on the value of _input
-                        function _filter(row) {
-                        	// skip "special" rows
-                                if (row.className.indexOf('indexhead') != -1 || row.className.indexOf('parent') != -1) {
-                                        return;
-                                }
-                                // only check the 'name' field
-                                var text = row.getElementsByClassName('indexcolname')[0].textContent.toLowerCase();
-                                var val = _input.value.toLowerCase();
-                                // change display type to show / hide this row
-                                row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
-                        }
+			function _filter(row) {
+				// skip "special" rows
+				if (row.className.indexOf('indexhead') != -1 || row.className.indexOf('parent') != -1) {
+					return;
+				}
+				// only check the 'name' field
+				var text = row.getElementsByClassName('indexcolname')[0].textContent.toLowerCase();
+				var val = _input.value.toLowerCase();
+				// change display type to show / hide this row
+				row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+			}
 
-                        return {
-                                init: function() {
-                                	// grab the 2nd child and add the parent class. tr:nth-child(2)
+			return {
+				init: function() {
+					// grab the 2nd child and add the parent class. tr:nth-child(2)
 					var secondRow = document.getElementsByTagName('tr')[1];
 					if (secondRow !== null) {
 						var secondRowName = secondRow.getElementsByClassName('indexcolname')[0].textContent;
 						// when apaxy is installed at doc root, there is no "parent directory" row
-                                		if (secondRowName === 'Parent Directory') {
+						if (secondRowName === 'Parent Directory') {
 							secondRow.className += ' parent';
 						}
 					}
 					// find the search box and bind the input event
-                                        document.getElementById('filter').oninput = _onInputEvent;
-                                }
-                        };
+					document.getElementById('filter').oninput = _onInputEvent;
+				}
+			};
 
-                })(Array.prototype);
+		})(Array.prototype);
 
-                document.addEventListener('readystatechange', function() {
-                        if (document.readyState === 'complete') {
-                                TableFilter.init();
-                        }
-                });
+		document.addEventListener('readystatechange', function() {
+			if (document.readyState === 'complete') {
+				TableFilter.init();
+			}
+		});
 
-        })(document);
+	})(document);
 </script>

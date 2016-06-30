@@ -37,8 +37,8 @@ a {
 	text-decoration:none;
 }
 a, img {
-        border:none;
-        outline:none
+	border:none;
+	outline:none
 }
 a:hover {
 	color:#2a2a2a;
@@ -55,17 +55,17 @@ a:hover {
     Filter (search box)
 \*------------------------------------*/
 #filter {
-        float: right;
-        font-size:.75em;
-        padding: .5em;
-        margin-bottom: .5em;
-        border: 1px solid #aaa;
-        border-radius: .25em;
-        width: 10em;
-        transition: width 0.25s ease;
+	float: right;
+	font-size:.75em;
+	padding: .5em;
+	margin-bottom: .5em;
+	border: 1px solid #aaa;
+	border-radius: .25em;
+	width: 10em;
+	transition: width 0.25s ease;
 }
 #filter:focus {
-        width: 14em;
+	width: 14em;
 }
 /*------------------------------------*\
     Demo block
