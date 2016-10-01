@@ -1,10 +1,10 @@
-#Apaxy
+# Apaxy
 
 Demo: [adamwhitcroft.com/apaxy](http://adamwhitcroft.com/apaxy/)
 
 Apaxy is a customisable theme built to enhance the experience of browsing web directories. It uses the `mod_autoindex` Apache module—and some CSS—to override the default style of a directory listing.
 
-##Features
+## Features
 
 Apaxy may be basic, but it gives you a great deal of creative freedom when styling your directory.
 
@@ -15,7 +15,7 @@ Apaxy may be basic, but it gives you a great deal of creative freedom when styli
 
 _Sadly, visual style is all you can work with. It's not possible to alter the generated table structure of the listing directory with Apaxy._
 
-##Installation
+## Installation
 
 Apaxy requires an Apache(2.2.11+) enabled HTTP server.
 
@@ -26,14 +26,14 @@ Let's assume you have a folder named `share` in your server root directory (the 
 * Rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
-##Docker images
+## Docker images
 
 A [local Demo](http://localhost:8080) can be started with docker.
 `docker-compose build`
 `docker-compose up`
 
 
-##Apaxy themes
+## Apaxy themes
 
 If you'd like to alter the default Apaxy theme, look in the `/theme` folder and you'll find the following files:
 
@@ -51,7 +51,7 @@ The above rule will assign an icon named `gif.png` from the directory `theme/ico
 
 This URL path is relative to your site's root.
 
-##Mime Types
+## Mime Types
 
 The default Apaxy theme `theme/apaxy` has icons in place for the following mime types:
 
@@ -63,12 +63,11 @@ The default Apaxy theme `theme/apaxy` has icons in place for the following mime 
 
 ## Troubleshooting
 
-Make sure the options set in .htaccess files of Apaxy can actually be changed. This means that you need to allow to ovveride the used options in your apache configuration of the directory apaxy used with:
-```AllowOverride Indexes```
+Make sure the options set in .htaccess files of Apaxy can actually be changed. This means that you need to allow to ovveride the used options in your apache configuration of the directory apaxy used with: `AllowOverride Indexes`
 
 Find more information in the in the [apache documentation](https://httpd.apache.org/docs/2.2/de/mod/core.html).
 
-##Credits
+## Credits
 
 Apaxy owes it's existence to the amazing [h5ai](http://larsjung.de/h5ai/) by [Lars Jung](https://twitter.com/lrsjng). Had I not seen this, I would never have looked into making my own (probably way less useful) version.
 
