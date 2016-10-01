@@ -8,7 +8,7 @@ COPY apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 COPY apaxy/ /var/www/html/
 RUN mv /var/www/html/htaccess.txt /var/www/html/.htaccess && \
 mv /var/www/html/theme/htaccess.txt /var/www/html/theme/.htaccess && \
-rm /var/www/html/index.html && \
+rm -f /var/www/html/index.html && \
 touch /var/www/html/example.gif && \
 touch /var/www/html/example.jpg && \
 touch /var/www/html/example.txt && \
