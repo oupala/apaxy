@@ -56,7 +56,7 @@
 	AddIcon /theme/icons/jpg.png .jpg .jpeg .jpe
 	AddIcon /theme/icons/js.png .js .json
 	AddIcon /theme/icons/markdown.png .md
-	AddIcon /theme/icons/package.png .pkg .dmg
+	AddIcon /theme/icons/package.png .pkg .dmg .apk .ipa
 	AddIcon /theme/icons/pdf.png .pdf
 	AddIcon /theme/icons/php.png .php .phtml
 	AddIcon /theme/icons/playlist.png .m3u .m3u8 .pls .pls8
