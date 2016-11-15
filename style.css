@@ -1,0 +1,341 @@
+/*////////////////////////////////////////////////
+--------------------------------------------------
+*	Apaxy by @adamwhitcroft
+*	http://adamwhitcroft.com/apaxy/
+-------------------------------------------------- 
+////////////////////////////////////////////////*/
+
+* {
+	margin:0;
+	padding:0;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	       box-sizing: border-box; 
+}
+
+/*////////////////////////////////////////////////
+--------------------------------------------------
+*	Base
+-------------------------------------------------- 
+////////////////////////////////////////////////*/
+
+html {
+	min-height:100%;
+	border:10px solid #ECEEF1;
+	color:#61666c;
+	font-weight:400;
+	font-size:1em;
+	font-family:'Open Sans', sans-serif;
+	line-height:2em;
+}
+
+body {
+	padding:20px;
+	-webkit-backface-visibility:hidden;
+}
+
+/*////////////////////////////////////////////////
+--------------------------------------------------
+*	Type
+-------------------------------------------------- 
+////////////////////////////////////////////////*/
+
+h1,h2 {
+	color:#2a2a2a;
+	font-weight:400;
+}
+
+h1 {
+	margin-bottom:1em;
+}
+
+h2 {
+	margin-bottom:1em;
+}
+
+p {
+	margin-bottom:1.5em;
+}
+
+small {
+	font-size:.75em;
+}
+
+	small span {
+		display:inline-block;
+		margin-right:5px;
+		width:20px;
+		height:20px;
+		border:1px solid #f32236;
+		-webkit-border-radius:40px;
+		   -moz-border-radius:40px;
+		    -ms-border-radius:40px;
+		     -o-border-radius:40px;
+		        border-radius:40px;
+		color:#f32236;
+		text-align:center;
+		font-weight:bold;
+		line-height:20px;
+	}
+
+a {
+	color:#f32236;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#f37c4c;
+}
+
+ul {
+	margin:0 0 1.5em 3em;
+}
+
+code,pre {
+	color:#2a2a2a;
+	font-family:consolas,monospace;	
+}
+
+pre {
+	overflow:auto;
+	margin-bottom:1.5em;
+	padding:1em;
+	-webkit-border-radius:3px;
+	   -moz-border-radius:3px;
+	    -ms-border-radius:3px;
+	     -o-border-radius:3px;
+	        border-radius:3px;
+	background:#ECEEF1;
+	font-size:inherit;
+}
+
+.bttn {
+	display:inline-block;
+	margin-top:35px;
+	padding:.5em 4em;
+	-webkit-border-radius:3px;
+	   -moz-border-radius:3px;
+	    -ms-border-radius:3px;
+	     -o-border-radius:3px;
+	        border-radius:3px;
+	border-radius:3px;
+	background:#f32236 url(img/bttn-bg.png) repeat center left;
+	color:white;
+	text-align:center;
+	-webkit-transition:background-position 4s linear;
+	   -moz-transition:background-position 4s linear;
+	    -ms-transition:background-position 4s linear;
+	     -o-transition:background-position 4s linear;
+	        transition:background-position 4s linear;
+}
+
+	.bttn:hover {
+		background:#f32236 url(img/bttn-bg.png) repeat center right;
+		text-decoration:none;
+	}
+
+.tweetThis {
+	text-align:center;
+}
+
+	.tweetThis .tweet {
+		padding:0;
+		width:204px;
+	}
+
+	.tweetThis img {
+		display:block;
+		margin-left:77px;
+	}
+
+	/* Adapted from https://github.com/AdamWhitcroft/CSS.Tooltips/blob/master/css-tooltips.css */
+
+	[data-tip] {
+		position:relative;
+	}
+
+	[data-tip]:after {
+		position:absolute;
+		top:-35px;
+		left:50%;
+		z-index:9;
+		display:none;
+		margin-left:-102px;
+		padding:.5em 0; 
+		width:204px;
+		height:18px;
+		-webkit-border-radius:3px;
+		   -moz-border-radius:3px;
+		    -ms-border-radius:3px;
+		     -o-border-radius:3px;
+		        border-radius:3px;
+		background:#ECEEF1;
+		color:#61666c;
+		content:attr(data-tip);
+		font-size: 0.875em;
+		line-height:18px;
+	}
+
+	[data-tip]:hover:after {
+		display:block;
+	}
+
+	[data-tip]:active:after {
+		content:"Thanks!";
+	}
+
+/*////////////////////////////////////////////////
+--------------------------------------------------
+*	Structure
+-------------------------------------------------- 
+////////////////////////////////////////////////*/
+
+.island {
+	margin:0 auto 1.5em auto;
+	max-width:800px;
+}
+
+.header {
+	margin-top:20px;
+	margin-bottom:20px;
+	text-align:center;
+}
+
+	.header img {
+		margin-bottom:1em;
+	}
+
+	.header p {
+		text-align:left;
+	}
+
+.example {
+	text-align:center;
+}
+
+	.example img {
+		max-width:100%;
+	}
+
+.demo {
+	margin-bottom:1.5em;
+	padding:1em;
+	background:#ECEEF1;
+	text-align:center;
+}
+
+	.demo p {
+		margin:0;
+	}
+
+.footer {
+	padding:2em;
+	font-size:80%;
+	text-align:center;
+}
+
+	.footer p {
+		margin:0;
+	}
+
+/*////////////////////////////////////////////////
+--------------------------------------------------
+*	Animations
+-------------------------------------------------- 
+////////////////////////////////////////////////*/
+
+@-webkit-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-ms-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-ms-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-ms-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeDown {
+	-webkit-animation:fadeDown 1s ease;
+	   -moz-animation:fadeDown 1s ease;
+	    -ms-animation:fadeDown 1s ease;
+	     -o-animation:fadeDown 1s ease;
+	        animation:fadeDown 1s ease;
+}
+
+@-webkit-keyframes bewton {
+	0% {background-position:0 0;}
+	100% {background-position:-440px 0;}
+}
+
+@-moz-keyframes bewton {
+	0% {background-position:0 0;}
+	100% {background-position:-440px 0;}
+}
+
+@-ms-keyframes bewton {
+	0% {background-position:0 0;}
+	100% {background-position:-440px 0;}
+}
+
+@-o-keyframes bewton {
+	0% {background-position:0 0;}
+	100% {background-position:-440px 0;}
+}
+
+@keyframes bewton {
+	0% {background-position:0 0;}
+	100% {background-position:-440px 0;}
+}
+
+/*.bewton:hover {
+	-webkit-animation: bewton 20s infinite linear;
+	   -moz-animation: bewton 20s infinite linear;
+	    -ms-animation: bewton 20s infinite linear;
+	     -o-animation: bewton 20s infinite linear;
+	        animation: bewton 20s infinite linear;
+}*/
