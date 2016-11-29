@@ -61,12 +61,12 @@ The default Apaxy theme `theme/apaxy` has icons in place for the following mime 
 
 ## Troubleshooting
 
-Make sure the options set in .htaccess files of Apaxy can actually be changed. This means that you need to allow to ovveride the used options in your apache configuration of the directory apaxy used with: `AllowOverride Indexes`
+Make sure the options set in `.htaccess` files of Apaxy can actually be changed. This means that you need to allow to ovveride the used options in your apache configuration of the directory apaxy used with: `AllowOverride Indexes`
 
 Find more information in the in the [apache documentation](https://httpd.apache.org/docs/2.2/de/mod/core.html).
 
 ## Credits
 
-Apaxy owes it's existence to the amazing [h5ai](http://larsjung.de/h5ai/) by [Lars Jung](https://twitter.com/lrsjng). Had I not seen this, I would never have looked into making my own (probably way less useful) version.
+Apaxy owes its existence to the amazing [h5ai](http://larsjung.de/h5ai/) by [Lars Jung](https://twitter.com/lrsjng). Had I not seen this, I would never have looked into making my own (probably way less useful) version.
 
 [Faenza Icons](http://tiheum.deviantart.com/art/Faenza-Icons-173323228) are used in the `apaxy` theme.
