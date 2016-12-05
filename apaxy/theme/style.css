@@ -24,6 +24,7 @@ html {
 	font-size:1em;
 	font-family:'Open Sans', sans-serif;
 	line-height:2em;
+	width: 100%;
 }
 body {
 	padding:20px;
