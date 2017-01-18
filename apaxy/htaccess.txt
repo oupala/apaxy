@@ -71,7 +71,7 @@
 	AddIcon theme/icons/script.png .bat .cmd .sh
 	AddIcon theme/icons/sql.png .sql
 	AddIcon theme/icons/tiff.png .tiff .tif
-	AddIcon theme/icons/text.png .txt .nfo
+	AddIcon theme/icons/text.png .txt .nfo .epub .mobi .azw
 	AddIcon theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
 	AddIcon theme/icons/xml.png .xml
 	AddIcon theme/icons/zip.png .zip
