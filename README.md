@@ -53,11 +53,16 @@ This URL path is relative to your site's root.
 
 The default Apaxy theme `theme/apaxy` has icons in place for the following mime types:
 
-    .aif .aif .asf .asx .avi .bin .c .css .csv .dmg .doc .docm .docx .dot .dotm .eps .flv .gif 
-    .htm .html .ico .iff .jar .jpeg .jpg .js .json .log .m3u .m4a .md .mid .mov .mp3 .mp4 .mpa 
-    .mpg .msg .mwa .odt .pages .pdf .pkg .png .ps .psd .ra .rar .rb .rm .rss .rtf .shtml 
-    .sql .srt .swf .tex .tiff .txt .vob .wav .wmv .wpd .wps .xhtml .xlam .xlr .xls .xlsm .xlsx 
-    .xltm .xltx .xml .zip
+    .ace .aif .aif .asf .asx .atom .avi .bin .c .cb7 .cba .cbt .cbr .cbz .class
+    .command .cso .css .csv .dmg .doc .docm .docx .dot .dotm .eot .eps .f4a .f4b
+    .fla .flv .gif .htm .html .ico .iso .iff .jar .java .jpeg .jpg .js .json
+    .key .kth .log .m3u .m4a .make .markdown .md .mid .mov .mp2 .mp3 .mp4 .mpa
+    .mpg .msg .mwa .numbers .odp .odt .ofm .otf .opus .pages .pdf .php3 .php4
+    .php5 .php7 .php .phps .phtml .pkg .png .pot .potm .potx .pps .ppsm .ppsx
+    .ppt .pptx .pptm .ps .psd .py .pyc .qt .ra .rar .rb .rm .rss .rtf .shtml
+    .sql .srt .swf .tex .tif .tiff .ttf .txt .url .vob .wav .wma .wmv .woff
+    .woff2 .wpd .wps .xfl .xhtml .xlam .xlr .xls .xlsb .xlsm .xlsx .xltm .xltx
+    .xml .zip
 
 ## Troubleshooting
 
