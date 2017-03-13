@@ -1,0 +1,137 @@
+/*------------------------------------*\
+    Apaxy
+    by @adamwhitcroft
+
+    Theme name: Apaxy
+    Theme author: @adamwhitcroft
+    Mod by: @fhdk
+    Inspired by: https://designschool.canva.com/blog/100-color-combinations/ #54
+\*------------------------------------*/
+@import url('//fonts.googleapis.com/css?family=Open+Sans');
+/* Have to use @import for the font, as you can only specify a single stylesheet */
+/*
+#F9BA32 - sunshine
+#426E86 - steel blue
+#F8F1E5 - bone
+#2F3131 - coal
+*/
+{
+	margin:0;
+	padding:0;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	       box-sizing: border-box;
+}
+html, body {
+	background-color: #2F3131;
+}
+
+html {
+	min-height:100%;
+	border-top:10px solid #F9BA32;
+	border-bottom:10px solid #F9BA32;
+	color:#F8F1E5;
+	font-weight:400;
+	font-size:1em;
+	font-family:'Open Sans', sans-serif;
+	line-height:2em;
+}
+body {
+	padding:20px;
+	-webkit-backface-visibility:hidden;
+}
+code {
+	font-family:consolas,monospace;
+}
+a {
+	color:#F9BA32;
+	text-decoration:none;
+}
+a, img {
+        border:none;
+        outline:none
+}
+a:hover {
+	color:#F8F1E5;
+}
+/*------------------------------------*\
+    Wrapper
+\*------------------------------------*/
+.wrapper {
+	margin:0 auto;
+	padding-top:20px;
+	max-width:80%;
+}
+/*------------------------------------*\
+    Demo block
+\*------------------------------------*/
+.block {
+	font-size:.875em;
+	margin:20px 0;
+	padding:20px;
+	color:#F8F1E5;
+}
+/*------------------------------------*\
+    Table (directory listing)
+\*------------------------------------*/
+table {
+	width:100%;
+	border-collapse:collapse;
+	font-size:.875em;
+}
+tr {
+	outline:0;
+	border:0;
+}
+tr:hover td {
+	background:#426E86;
+}
+th {
+	text-align:left;
+	font-size:.75em;
+	padding-right:20px;
+}
+/* 2nd Column: Filename */
+th + th {
+	width:65%;
+}
+/* 3rd Column: Last Modified */
+th + th + th {
+}
+/* 4th Column: Size */
+th + th + th + th {
+	width:5%;
+}
+tr td:first-of-type {
+	padding-left:10px;
+	padding-right:10px;
+}
+td {
+	padding:5px 0;
+	outline:0;
+	border:0;
+	border-bottom:1px solid #F8F1E5;
+	vertical-align:middle;
+	text-align:left;
+	-webkit-transition:background 300ms ease;
+	   -moz-transition:background 300ms ease;
+	    -ms-transition:background 300ms ease;
+	     -o-transition:background 300ms ease;
+	        transition:background 300ms ease;
+}
+td a{
+	display: block;
+}
+tr.parent a[href^="/"] {
+	color:#F9BA32;
+}
+	.parent a[href^="/"]:hover {
+		color:#F8F1E5;
+	}
+/*------------------------------------*\
+    Footer
+\*------------------------------------*/
+.footer {
+	text-align:center;
+	font-size:.75em;
+}
