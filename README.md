@@ -33,6 +33,16 @@ Should be changed to...
 
     AddIcon /share/theme/icons/gif.png .gif
 
+* Edit `footer.html` (now in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
+
+So...
+
+    <script src=/{FOLDERNAME}/theme/apaxy.js></script>
+
+Should be changed to...
+
+    <script src=/share/theme/apaxy.js></script>
+
 * Once done, rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
