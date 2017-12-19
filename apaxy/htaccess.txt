@@ -25,10 +25,10 @@
 	AddIcon /theme/icons/folder.png ^^DIRECTORY^^
 	AddIcon /theme/icons/folder-home.png ..
 	
-	AddIconByType (TXT,theme/icons/text.png) text/*
-	AddIconByType (IMG,theme/icons/image.png) image/*
-	AddIconByType (SND,theme/icons/audio.png) audio/*
-	AddIconByType (VID,theme/icons/video.png) video/*
+	AddIconByType (TXT,/theme/icons/text.png) text/*
+	AddIconByType (IMG,/theme/icons/image.png) image/*
+	AddIconByType (SND,/theme/icons/audio.png) audio/*
+	AddIconByType (VID,/theme/icons/video.png) video/*
 
 #
 # EXTENSION SPECIFIC ICONS
