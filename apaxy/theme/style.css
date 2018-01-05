@@ -5,122 +5,155 @@
     Theme name: Apaxy
     Theme author: @adamwhitcroft
 \*------------------------------------*/
+
 @import url('//fonts.googleapis.com/css?family=Open+Sans');
 /* Have to use @import for the font, as you can only specify a single stylesheet */
+
 * {
-	margin:0;
-	padding:0;
-	-webkit-box-sizing:border-box;
-	   -moz-box-sizing:border-box;
-	       box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	min-height:100%;
-	border-top:10px solid #ECEEF1;
-	border-bottom:10px solid #ECEEF1;
-	color:#61666c;
-	font-weight:400;
-	font-size:1em;
-	font-family:'Open Sans', sans-serif;
-	line-height:2em;
+  min-height: 100%;
+  border-top: 10px solid #ECEEF1;
+  border-bottom: 10px solid #ECEEF1;
+  color: #61666c;
+  font-weight: 400;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 2em;
 }
+
 body {
-	padding:20px;
-	-webkit-backface-visibility:hidden;
+  padding: 20px;
+  -webkit-backface-visibility: hidden;
 }
+
 code {
-	font-family:consolas,monospace;	
+  font-family: consolas, monospace;
 }
+
 a {
-	color:#61666c;
-	text-decoration:none;
+  color: #61666c;
+  text-decoration: none;
 }
+
 a, img {
-        border:none;
-        outline:none
+  border: none;
+  outline: none
 }
+
 a:hover {
-	color:#2a2a2a;
+  color: #2a2a2a;
 }
+
 /*------------------------------------*\
     Wrapper
 \*------------------------------------*/
+
 .wrapper {
-	margin:0 auto;
-	padding-top:20px;
-	max-width:80%;
+  margin: 0 auto;
+  padding-top: 20px;
+  max-width: 80%;
 }
+
 /*------------------------------------*\
     Demo block
 \*------------------------------------*/
+
 .block {
-	font-size:.875em;
-	margin:20px 0;
-	padding:20px;
-	color:#9099A3;
+  font-size: .875em;
+  margin: 20px 0;
+  padding: 20px;
+  color: #9099A3;
 }
+
 /*------------------------------------*\
     Table (directory listing)
 \*------------------------------------*/
+
 table {
-	width:100%;
-	border-collapse:collapse;
-	font-size:.875em;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .875em;
 }
+
 tr {
-	outline:0;
-	border:0;
+  outline: 0;
+  border: 0;
 }
+
 tr:hover td {
-	background:#f6f6f6;
+  background: #f6f6f6;
 }
+
 th {
-	text-align:left;
-	font-size:.75em;
-	padding-right:20px;
+  text-align: left;
+  font-size: .75em;
+  padding-right: 20px;
 }
+
 /* 2nd Column: Filename */
-th + th {
-	width:65%;
+
+th+th {
+  width: 65%;
 }
+
 /* 3rd Column: Last Modified */
-th + th + th {
-}
+
+th+th+th {}
+
 /* 4th Column: Size */
-th + th + th + th {
-	width:5%;
+
+th+th+th+th {
+  width: 5%;
 }
+
 tr td:first-of-type {
-	padding-left:10px;
-	padding-right:10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 td {
-	padding:5px 0;
-	outline:0;
-	border:0;
-	border-bottom:1px solid #edf1f5;
-	vertical-align:middle;
-	text-align:left;
-	-webkit-transition:background 300ms ease;
-	   -moz-transition:background 300ms ease;
-	    -ms-transition:background 300ms ease;
-	     -o-transition:background 300ms ease;
-	        transition:background 300ms ease;
+  padding: 5px 0;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #edf1f5;
+  vertical-align: middle;
+  text-align: left;
+  -webkit-transition: background 300ms ease;
+  -moz-transition: background 300ms ease;
+  -ms-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
+  transition: background 300ms ease;
 }
-td a{
-	display: block;
+
+td a {
+  display: block;
 }
+
+td a img {
+  width: 16px;
+  height: 16px;
+}
+
 tr.parent a[href^="/"] {
-	color:#9099A3;
+  color: #9099A3;
 }
-	.parent a[href^="/"]:hover {
-		color:#2281d0;
-	}
+
+.parent a[href^="/"]:hover {
+  color: #2281d0;
+}
+
 /*------------------------------------*\
     Footer
 \*------------------------------------*/
+
 .footer {
-	text-align:center;
-	font-size:.75em;
+  text-align: center;
+  font-size: .75em;
 }
