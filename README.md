@@ -21,7 +21,27 @@ Let's assume you have a folder named `share` in your server root directory (the 
 
 * [Download](https://github.com/AdamWhitcroft/Apaxy/archive/master.zip) and unzip Apaxy
 * Copy and paste the contents of the `/apaxy` folder to your `/share` folder.
-* Rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
+* Edit `htaccess.txt` (now in the `/share` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
+
+So...
+
+    AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
+
+Should be changed to...
+
+    AddIcon /share/theme/icons/gif.png .gif
+
+* Edit `footer.html` (now in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
+
+So...
+
+    <script src=/{FOLDERNAME}/theme/apaxy.js></script>
+
+Should be changed to...
+
+    <script src=/share/theme/apaxy.js></script>
+
+* Once done, rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
 ## Docker images
@@ -43,15 +63,15 @@ Edit these as you would any other HTML or CSS file.
 
 Adding your own icons is a little more involved. You'll need to edit the main Apaxy `.htaccess` file. Look for the following as an example:
 
-    AddIcon theme/icons/gif.png .gif
+    AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
 
-The above rule will assign an icon named `gif.png` from the directory `theme/icons/` to any file with the `.gif` extension.
+The above rule will assign an icon named `gif.png` from the directory `/{FOLDERNAME}/theme/icons/` to any file with the `.gif` extension.
 
 This URL path is relative to your site's root.
 
 ## Mime Types
 
-The default Apaxy theme `theme/apaxy` has icons in place for the following mime types:
+The default Apaxy theme `/themes/apaxy` has icons in place for the following mime types:
 
     .aif .aif .asf .asx .avi .bin .c .css .csv .dmg .doc .docm .docx .dot .dotm .eps .flv .gif 
     .htm .html .ico .iff .jar .jpeg .jpg .js .json .log .m3u .m4a .md .mid .mov .mp3 .mp4 .mpa 
