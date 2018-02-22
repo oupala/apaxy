@@ -10,6 +10,7 @@ Apaxy may be basic, but it gives you a great deal of creative freedom when styli
 * Make it pop with Javascript or jQuery.
 * Add welcome messages, download instructions or copyright notices.
 * Add custom mime type icons (requires editing the `.htaccess` file)
+* Add custom error pages for style and clarification when displaying server errors.
 
 _Sadly, visual style is all you can work with. It's not possible to alter the generated table structure of the listing directory with Apaxy._
 
@@ -40,6 +41,17 @@ So...
 Should be changed to...
 
     <script src=/share/theme/apaxy.js></script>
+	
+
+Also note that you will have to change `/share/errors/*.html` to reflect the absolute path of the style sheets and images:
+
+	<link rel="stylesheet" href="/{FOLDERNAME}/errors/css/style.css" />
+	<link rel="stylesheet" href="/{FOLDERNAME}/errors/css/normalize.css" />
+
+Would be changed to:
+
+	<link rel="stylesheet" href="/share/errors/css/style.css" />
+	<link rel="stylesheet" href="/share/errors/css/normalize.css" />
 
 * Once done, rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
