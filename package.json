@@ -1,0 +1,32 @@
+{
+  "name": "apaxy",
+  "version": "1.0.0",
+  "description": "A simple, customisable theme for your Apache directory listing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-changelog": "conventional-changelog --preset angular --infile CHANGELOG.md --same-file --release-count 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oupala/apaxy.git"
+  },
+  "keywords": [
+    "apaxy",
+    "apaxy-themes",
+    "css",
+    "icons",
+    "mime-types",
+    "customisable-theme",
+    "docker"
+  ],
+  "author": "Adam Whitcroft",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/oupala/apaxy/issues"
+  },
+  "homepage": "https://github.com/oupala/apaxy#readme",
+  "devDependencies": {
+    "conventional-changelog": "^1.1.0"
+  }
+}
