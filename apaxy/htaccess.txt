@@ -1,47 +1,3 @@
-#
-# Apaxy by @adamwhitcroft
-#
-# For a full breakdown of the mod_autoindex module:
-# http://apache.org/docs/2.2/mod/mod_autoindex.html
-#
-
-	# ENABLE INDEXING
-	Options +Indexes
-
-	# INDEX OPTIONS
-	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks
-
-    	# META VIEWPORT
-    	IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
-
-	# HIDE /theme DIRECTORY
-	IndexIgnore .htaccess /theme
-
-#
-# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
-#
-
-#
-# Replace {FOLDERNAME} with your directory URL eg:
-# If your directory is http://mywebsite.com/share/
-# you would change to:
-#
-# AddIcon /share/theme/icons/blank.png ^^BLANKICON^^
-#
-
-	AddIcon /{FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
-	AddIcon /{FOLDERNAME}/theme/icons/folder.png ^^DIRECTORY^^
-	AddIcon /{FOLDERNAME}/theme/icons/folder-home.png ..
-	
-	AddIconByType (TXT,/{FOLDERNAME}/theme/icons/text.png) text/*
-	AddIconByType (IMG,/{FOLDERNAME}/theme/icons/image.png) image/*
-	AddIconByType (SND,/{FOLDERNAME}/theme/icons/audio.png) audio/*
-	AddIconByType (VID,/{FOLDERNAME}/theme/icons/video.png) video/*
-
-#
-# EXTENSION SPECIFIC ICONS
-#
-
 	AddIcon /{FOLDERNAME}/theme/icons/archive.png .7z .bz2 .cab .gz .tar
 	AddIcon /{FOLDERNAME}/theme/icons/audio.png .aac .aif .aifc .aiff .ape .au .flac .iff .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg .xm .it .s3m .mod
 	AddIcon /{FOLDERNAME}/theme/icons/bin.png .bin .hex
@@ -79,7 +35,7 @@
 	AddIcon /{FOLDERNAME}/theme/icons/script.png .bat .cmd .sh
 	AddIcon /{FOLDERNAME}/theme/icons/sql.png .sql
 	AddIcon /{FOLDERNAME}/theme/icons/tiff.png .tiff .tif
-	AddIcon /{FOLDERNAME}/theme/icons/text.png .txt .nfo
+	AddIcon /{FOLDERNAME}/theme/icons/text.png .txt .nfo .epub .mobi .azw
 	AddIcon /{FOLDERNAME}/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
 	AddIcon /{FOLDERNAME}/theme/icons/xml.png .xml
 	AddIcon /{FOLDERNAME}/theme/icons/zip.png .zip
