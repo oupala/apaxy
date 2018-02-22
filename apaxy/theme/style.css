@@ -128,3 +128,14 @@ tr.parent a[href^="/"] {
 	text-align:center;
 	font-size:.75em;
 }
+
+/*------------------------------------*\
+    Media query for small screens
+\*------------------------------------*/
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .indexcollastmod { display: none; }
+    .wrapper { max-width: 100%; }
+}
