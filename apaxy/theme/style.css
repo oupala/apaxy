@@ -16,7 +16,7 @@ button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-bloc
 	padding:0;
 	-webkit-box-sizing:border-box;
 	   -moz-box-sizing:border-box;
-	       box-sizing: border-box; 
+	       box-sizing: border-box;
 }
 
 html {
@@ -34,7 +34,7 @@ body {
 	-webkit-backface-visibility:hidden;
 }
 code {
-	font-family:consolas,monospace;	
+	font-family:consolas,monospace;
 }
 a {
 	color:#61666c;
@@ -127,4 +127,76 @@ tr.parent a[href^="/"] {
 .footer {
 	text-align:center;
 	font-size:.75em;
+}
+
+/*------------------------------------*\
+		Error pages
+/*------------------------------------*/
+/* Animation */
+@-webkit-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-ms-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-ms-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-ms-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeDown {
+	-webkit-animation:fadeDown 1s ease;
+	   -moz-animation:fadeDown 1s ease;
+	    -ms-animation:fadeDown 1s ease;
+	     -o-animation:fadeDown 1s ease;
+	        animation:fadeDown 1s ease;
+}
+
+/* Error code display */
+.errorCode {
+	font-size: 80px;
 }
