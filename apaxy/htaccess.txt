@@ -98,6 +98,6 @@
 # ERROR PAGES
 #
 
-	ErrorDocument 404 /{FOLDERNAME}/theme/404.html
-	ErrorDocument 403 /{FOLDERNAME}/theme/403.html
-	ErrorDocument 500 /{FOLDERNAME}/theme/500.html
+	ErrorDocument 404 http://%{HTTP_HOST}/{FOLDERNAME}/theme/404.html
+	ErrorDocument 403  http://%{HTTP_HOST}/{FOLDERNAME}/theme/403.html
+	ErrorDocument 500  http://%{HTTP_HOST}/{FOLDERNAME}/theme/500.html
