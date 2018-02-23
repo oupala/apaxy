@@ -41,17 +41,9 @@ So...
 Should be changed to...
 
     <script src=/share/theme/apaxy.js></script>
-	
 
-Also note that you will have to change `/share/errors/*.html` to reflect the absolute path of the style sheets and images:
+Also remember to do the same with the error pages.
 
-	<link rel="stylesheet" href="/{FOLDERNAME}/errors/css/style.css" />
-	<link rel="stylesheet" href="/{FOLDERNAME}/errors/css/normalize.css" />
-
-Would be changed to:
-
-	<link rel="stylesheet" href="/share/errors/css/style.css" />
-	<link rel="stylesheet" href="/share/errors/css/normalize.css" />
 
 * Once done, rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
@@ -85,10 +77,10 @@ This URL path is relative to your site's root.
 
 The default Apaxy theme `/themes/apaxy` has icons in place for the following mime types:
 
-    .aif .aif .asf .asx .avi .bin .c .css .csv .dmg .doc .docm .docx .dot .dotm .eps .flv .gif 
-    .htm .html .ico .iff .jar .jpeg .jpg .js .json .log .m3u .m4a .md .mid .mov .mp3 .mp4 .mpa 
-    .mpg .msg .mwa .odt .pages .pdf .pkg .png .ps .psd .ra .rar .rb .rm .rss .rtf .shtml 
-    .sql .srt .swf .tex .tiff .txt .vob .wav .wmv .wpd .wps .xhtml .xlam .xlr .xls .xlsm .xlsx 
+    .aif .aif .asf .asx .avi .bin .c .css .csv .dmg .doc .docm .docx .dot .dotm .eps .flv .gif
+    .htm .html .ico .iff .jar .jpeg .jpg .js .json .log .m3u .m4a .md .mid .mov .mp3 .mp4 .mpa
+    .mpg .msg .mwa .odt .pages .pdf .pkg .png .ps .psd .ra .rar .rb .rm .rss .rtf .shtml
+    .sql .srt .swf .tex .tiff .txt .vob .wav .wmv .wpd .wps .xhtml .xlam .xlr .xls .xlsm .xlsx
     .xltm .xltx .xml .zip
 
 ## Troubleshooting
