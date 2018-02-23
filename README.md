@@ -85,6 +85,10 @@ Make sure the options set in `.htaccess` files of Apaxy can actually be changed.
 
 Find more information in the in the [apache documentation](https://httpd.apache.org/docs/2.2/de/mod/core.html).
 
+## Third-Party Integrations
+Features that not included to master but can be easily integrated with apaxy:
+* [lightGallery](https://github.com/oupala/apaxy/issues/89) — image previews in in colorobox-like mode.
+
 ## Credits
 
 Apaxy owes its existence to the amazing [h5ai](http://larsjung.de/h5ai/) by [Lars Jung](https://twitter.com/lrsjng). Had I not seen this, I would never have looked into making my own (probably way less useful) version.
