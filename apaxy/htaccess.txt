@@ -65,7 +65,7 @@
 	AddIcon /{FOLDERNAME}/theme/icons/js.png .js .json
 	AddIcon /{FOLDERNAME}/theme/icons/markdown.png .md
 	AddIcon /{FOLDERNAME}/theme/icons/package.png .pkg .dmg
-	AddIcon /{FOLDERNAME}/theme/icons/pdf.png .pdf
+	AddIcon /{FOLDERNAME}/theme/icons/pdf.png .pdf .PDF
 	AddIcon /{FOLDERNAME}/theme/icons/php.png .php .phtml
 	AddIcon /{FOLDERNAME}/theme/icons/playlist.png .m3u .m3u8 .pls .pls8
 	AddIcon /{FOLDERNAME}/theme/icons/png.png .png
