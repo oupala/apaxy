@@ -1,6 +1,6 @@
 {
   "name": "apaxy",
-  "version": "1.0.0",
+  "version": "1.1.0-dev",
   "description": "A simple, customisable theme for your Apache directory listing.",
   "main": "index.js",
   "scripts": {
