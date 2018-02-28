@@ -79,7 +79,7 @@ AddIcon /{FOLDERNAME}/theme/icons/rss.png .rss
 AddIcon /{FOLDERNAME}/theme/icons/script.png .bat .cmd .sh
 AddIcon /{FOLDERNAME}/theme/icons/sql.png .sql
 AddIcon /{FOLDERNAME}/theme/icons/tiff.png .tiff .tif
-AddIcon /{FOLDERNAME}/theme/icons/text.png .txt .nfo
+AddIcon /{FOLDERNAME}/theme/icons/text.png .txt .nfo .epub .mobi .azw
 AddIcon /{FOLDERNAME}/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
 AddIcon /{FOLDERNAME}/theme/icons/xml.png .xml
 AddIcon /{FOLDERNAME}/theme/icons/zip.png .zip
