@@ -20,6 +20,7 @@ Apaxy may be basic, but it gives you a great deal of creative freedom when styli
 * Make it pop with Javascript or jQuery.
 * Add welcome messages, download instructions or copyright notices.
 * Add custom mime type icons (requires editing the `.htaccess` file)
+* Use custom error pages.
 
 _Sadly, visual style is all you can work with. It's not possible to alter the generated table structure of the listing directory with Apaxy._
 
