@@ -88,7 +88,17 @@ DefaultIcon /{FOLDERNAME}/theme/icons/default.png
 #
 # THEME FILES
 #
-
 HeaderName /{FOLDERNAME}/theme/header.html
 ReadmeName /{FOLDERNAME}/theme/footer.html
 IndexStyleSheet "/{FOLDERNAME}/theme/style.css"
+
+#
+# ERROR PAGES
+#
+
+ErrorDocument 400 http://%{HTTP_HOST}/{FOLDERNAME}/theme/400.html
+ErrorDocument 403  http://%{HTTP_HOST}/{FOLDERNAME}/theme/403.html
+ErrorDocument 404  http://%{HTTP_HOST}/{FOLDERNAME}/theme/404.html
+ErrorDocument 408  http://%{HTTP_HOST}/{FOLDERNAME}/theme/408.html
+ErrorDocument 500  http://%{HTTP_HOST}/{FOLDERNAME}/theme/500.html
+ErrorDocument 502  http://%{HTTP_HOST}/{FOLDERNAME}/theme/502.html
