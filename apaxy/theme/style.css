@@ -10,14 +10,14 @@ button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-bloc
 \*------------------------------------*/
 
 @import url('//fonts.googleapis.com/css?family=Open+Sans');
-/* Have to use @import for the font, as you can only specify a single stylesheet */
 
+/* Have to use @import for the font, as you can only specify a single stylesheet */
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 html {
@@ -37,7 +37,7 @@ body {
 }
 
 code {
-  font-family: consolas, monospace;
+  font-family: consolas,monospace;
 }
 
 a {
@@ -47,7 +47,7 @@ a {
 
 a, img {
   border: none;
-  outline: none
+  outline: none;
 }
 
 a:hover {
@@ -102,17 +102,16 @@ th {
 
 /* 2nd Column: Filename */
 
-th+th {
+th + th {
   width: 65%;
 }
 
 /* 3rd Column: Last Modified */
-
-th+th+th {}
+th + th + th {
+}
 
 /* 4th Column: Size */
-
-th+th+th+th {
+th + th + th + th {
   width: 5%;
 }
 
@@ -128,20 +127,15 @@ td {
   border-bottom: 1px solid #edf1f5;
   vertical-align: middle;
   text-align: left;
-  -webkit-transition: background 300ms ease;
-  -moz-transition: background 300ms ease;
-  -ms-transition: background 300ms ease;
-  -o-transition: background 300ms ease;
   transition: background 300ms ease;
+  -o-transition: background 300ms ease;
+  -ms-transition: background 300ms ease;
+  -moz-transition: background 300ms ease;
+  -webkit-transition: background 300ms ease;
 }
 
 td a {
   display: block;
-}
-
-td a img {
-  width: 16px;
-  height: 16px;
 }
 
 tr.parent a[href^="/"] {
@@ -159,4 +153,87 @@ tr.parent a[href^="/"] {
 .footer {
   text-align: center;
   font-size: .75em;
+}
+
+/*------------------------------------*\
+    Media query for small screens
+\*------------------------------------*/
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .indexcollastmod { display: none; }
+    .wrapper { max-width: 100%; }
+}
+
+/*------------------------------------*\
+	Error pages
+/*------------------------------------*/
+/* Animation */
+@-webkit-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-ms-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-ms-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-ms-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeDown {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeDown {
+	-webkit-animation:fadeDown 1s ease;
+	   -moz-animation:fadeDown 1s ease;
+	    -ms-animation:fadeDown 1s ease;
+	     -o-animation:fadeDown 1s ease;
+	        animation:fadeDown 1s ease;
+}
+
+/* Error code display */
+.errorCode {
+	font-size: 80px;
 }
