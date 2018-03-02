@@ -17,6 +17,7 @@ touch /var/www/html/{FOLDERNAME}/sample.tar  && \
 touch /var/www/html/{FOLDERNAME}/sample.zip && \
 touch /var/www/html/{FOLDERNAME}/sample.png  && \
 touch /var/www/html/{FOLDERNAME}/sample.aac  && \
+touch /var/www/html/{FOLDERNAME}/sample.crx  && \
 touch /var/www/html/{FOLDERNAME}/sample.aif  && \
 touch /var/www/html/{FOLDERNAME}/sample.aifc  && \
 touch /var/www/html/{FOLDERNAME}/sample.aiff  && \
