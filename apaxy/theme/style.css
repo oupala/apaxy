@@ -138,6 +138,11 @@ td a {
   display: block;
 }
 
+td a img {
+  width: 16px;
+  height: 16px;
+}
+
 tr.parent a[href^="/"] {
   color: #9099A3;
 }
