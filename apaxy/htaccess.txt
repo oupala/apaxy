@@ -38,6 +38,12 @@ AddIconByType (IMG,{FOLDERNAME}/theme/icons/image.png) image/*
 AddIconByType (SND,{FOLDERNAME}/theme/icons/audio.png) audio/*
 AddIconByType (VID,{FOLDERNAME}/theme/icons/video.png) video/*
 
+AddIconByType (pdf,{FOLDERNAME}/theme/icons/pdf.png) application/pdf
+AddIconByType (zip,{FOLDERNAME}/theme/icons/zip.png) application/zip
+AddIconByType (xml,{FOLDERNAME}/theme/icons/xml.png) application/xml
+AddIconByType (doc,{FOLDERNAME}/theme/icons/doc.png) application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document application/vnd.oasis.opendocument.text
+AddIconByType (calc,{FOLDERNAME}/theme/icons/calc.png) application/vnd.ms-excel application/vnd.openxmlformats-officedocument.spreadsheetml.sheet application/vnd.oasis.opendocument.calc
+
 #
 # EXTENSION SPECIFIC ICONS
 #
