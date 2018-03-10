@@ -2,11 +2,11 @@
 document.getElementsByTagName('tr')[1].className = 'parent';
 // fix links when not adding a / at the end of the URI
 var uri = window.location.pathname.substr(1);
-if (uri.substring(uri.length - 1) != '/') {
+if (uri.substring(uri.length - 1) !== '/') {
   var indexes = document.getElementsByClassName('indexcolname');
   var i = indexes.length;
-  while (i--) {
+  while (i) {
     var a = indexes[i].getElementsByTagName('a')[0];
-    a.href = '/' + uri + '/' + a.getAttribute('href', 2);
+    a.href = '/' + a.getAttribute('href', 2);
   }
 }
