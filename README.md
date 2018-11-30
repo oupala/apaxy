@@ -46,7 +46,7 @@ Should be changed to...
 AddIcon /share/theme/icons/gif.png .gif
 ```
 
-* Edit `footer.html` (now in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
+* Edit `footer.html`, `400.html`, `403.html`, `404.html`, `408.html`, `500.html`, `502.html` (now in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
 
 So...
 
