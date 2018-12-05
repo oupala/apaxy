@@ -28,6 +28,23 @@ _Sadly, visual style is all you can work with. It's not possible to alter the ge
 
 Apaxy requires an Apache(2.2.11+) enabled HTTP server.
 
+### Quick Start
+If you would like, you can automate the installation of Apaxy with the included `apaxy-configure.sh` script.
+
+To get started, first open `apaxy.config` in your favorite editor:
+
+	$ vim apaxy.config
+
+Edit the WEB_ROOT and INSTALL_DIRECTORY variables to correspond to your server's settings, then save and exit.
+
+Then run the configuration script as a user that can write to the install directory. With Apache, this would be the `www-data` user:
+
+	$ sudo -u www-data ./apaxy-configure.sh
+
+The files will be copied to the web server directory, and modified automatically based on the settings specified.
+
+### Manual Install
+
 Let's assume you have a folder named `share` in your server root directory (the path thus being `http://mywebsite.com/share`) that you'd like to use as your listing directory:
 
 * [Download](https://github.com/AdamWhitcroft/Apaxy/archive/master.zip) and unzip Apaxy
@@ -46,7 +63,7 @@ Should be changed to...
 AddIcon /share/theme/icons/gif.png .gif
 ```
 
-* Edit `footer.html`, `400.html`, `403.html`, `404.html`, `408.html`, `500.html`, `502.html` (now in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
+* Edit `footer.html` (now in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
 
 So...
 
