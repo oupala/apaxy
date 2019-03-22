@@ -2,9 +2,8 @@
 var uri = window.location.pathname.substr(1);
 if (uri.substring(uri.length - 1) !== '/') {
   var indexes = document.getElementsByClassName('indexcolname');
-  var i = indexes.length;
-  while (i) {
-    var a = indexes[i].getElementsByTagName('a')[0];
+  for (let i of indexes) {
+    var a = i.getElementsByTagName('a')[0];
     a.href = '/' + a.getAttribute('href', 2);
   }
 }
