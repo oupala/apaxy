@@ -77,7 +77,7 @@ Should be changed to...
 <script src=/share/theme/apaxy.js></script>
 ```
 
-* Once done, rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
+* Once done, rename `htaccess.txt` to `.htaccess` in the `/share` directory.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
 ## Docker images
