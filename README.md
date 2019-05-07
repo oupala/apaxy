@@ -54,7 +54,7 @@ Let's assume you have a folder named `share` in your server root directory (the 
 So...
 
 ```ApacheConf
-AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
+AddIcon {FOLDERNAME}/theme/icons/gif.png .gif
 ```
 
 Should be changed to...
@@ -68,7 +68,7 @@ AddIcon /share/theme/icons/gif.png .gif
 So...
 
 ```html
-<script src=/{FOLDERNAME}/theme/apaxy.js></script>
+<script src={FOLDERNAME}/theme/apaxy.js></script>
 ```
 
 Should be changed to...
@@ -100,10 +100,10 @@ Edit these as you would any other HTML or CSS file.
 Adding your own icons is a little more involved. You'll need to edit the main Apaxy `.htaccess` file. Look for the following as an example:
 
 ```ApacheConf
-AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
+AddIcon {FOLDERNAME}/theme/icons/gif.png .gif
 ```
 
-The above rule will assign an icon named `gif.png` from the directory `/{FOLDERNAME}/theme/icons/` to any file with the `.gif` extension.
+The above rule will assign an icon named `gif.png` from the directory `{FOLDERNAME}/theme/icons/` to any file with the `.gif` extension.
 
 This URL path is relative to your site's root.
 
