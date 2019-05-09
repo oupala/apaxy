@@ -1,69 +1,200 @@
 #!/bin/bash
-echo "Apaxy Configurator - by Jordan Bancino"
-echo "Checking configuration..."
+#
+# apaxy configurator
+# v0.2
+# configure apaxy according to your local paths and configuration
+# author : Jordan Bancino and Ploc
+# contact : jordan [@] bancino.net
+# licence : GPLv3
 
-CONFIG="apaxy.config"
+# enabling strict mode
+# -e - exit immediatly on error (disable with "+e" when an error can happens, then enable it again with "-e")
+# -u - undefined variables are forbidden (enable this option after getting parameters from $1 $2...) see below
+# -o pipefail - find error return code inside piped commands
+# IFS - set strong internal field separator
+set -eo pipefail
+IFS=$'\n\t'
 
-if [ -f "$CONFIG" ]; then
-    . "$CONFIG"
-else
-    echo "Apaxy configuration not found! Please restore or create the configuration file: $CONFIG"
-    exit 1
-fi
+# default config
+defaultLogLevel=2
+defaultLogFile="$(basename "${0}" .sh).log"
+defaultApacheWebRootPath="/var/www/html"
+defaultInstallWebPath=""
 
-if [ -v INSTALL_DIRECTORY ] && [ -v WEB_ROOT ]; then
-    echo "- Configuring Apaxy for use in directory: $INSTALL_DIRECTORY (Web root: $WEB_ROOT)"
-    mkdir -p "$WEB_ROOT$INSTALL_DIRECTORY"
-    if [ ! -w "$WEB_ROOT$INSTALL_DIRECTORY" ] || [ ! -d "$WEB_ROOT$INSTALL_DIRECTORY" ]; then
-    	echo "Directory does not exist or is not writable by the current user: $WEB_ROOT$INSTALL_DIRECTORY"
-	exit 1
+# functions
+
+###
+ # display help
+ ##
+displayHelp () {
+    cat <<EOF
+$(basename "${0}") configure apaxy according to your local paths and configuration.
+
+It can either configure apaxy according to your local paths and configuration bu it can also install the required files in your http server path.
+
+EOF
+    displayUsage
+    cat <<EOF
+
+Available optionnal parameters are :
+  -h  - display help
+  -d  - set path/to/dir/ directory where apaxy will be installed on the filesystem
+  -w  - set path/to/dir/ directory where apaxy will be available on the httpd server
+  -ll - set the log level
+  -lf - set the log file
+EOF
+}
+
+###
+ # display usage
+ ##
+displayUsage () {
+    cat <<EOF
+usage - $(basename "${0}") [-h] [-d path/to/dir/] [-w path/to/dir/] [-ll logLevel] [-lf logFile]
+EOF
+}
+
+###
+ # log a message
+ #
+ # @global $logLevel the log level
+ # @global $logFile the log file
+ # @param $1 the log level of the message
+ # @param $2 the log message
+ ##
+log () {
+    local paramLogLevel="${1}"
+    local paramLogMessage="${2}"
+
+    # shellcheck disable=SC2155
+    local logDate="$(date +%H:%M:%S)"
+    local logMessage="[${logDate}] ${paramLogMessage}"
+
+    if [ "${paramLogLevel}" -le "${logLevel}" ]
+    then
+        echo "${logMessage}"
     fi
+
+    if [ ! -z "${logFile}" ]
+    then
+        echo "${logMessage}" >> "${logFile}"
+    fi
+}
+
+# getting parameters value from config file (can be overloaded by cli values)
+workingDirectory=$(dirname "$0")
+
+if [ -f "${workingDirectory}/apaxy.config" ]; then
+    # shellcheck source=apaxy.config
+    source "${workingDirectory}/apaxy.config"
 else
-    echo "No directory specified! Please define the INSTALL_DIRECTORY and WEB_ROOT variables in $CONFIG"
+    log 1 "ERROR - apaxy configuration not found, please restore or create the configuration file apaxy.config"
     exit 1
 fi
 
-echo "Copying files to web root..."
-cp -r . "$WEB_ROOT$INSTALL_DIRECTORY"
-cd "$WEB_ROOT$INSTALL_DIRECTORY"
+# getting parameters value from cli (can overload config file values)
+while [ "$#" -ge 1 ] ; do
+    case "${1}" in
+        -h|--help) # display help
+            displayHelp
+            exit 0
+            ;;
+        -d) # set path/to/dir/ directory where apaxy will be available on the httpd server
+            shiftStep=2
+            apacheWebRootPath="${2}"
+            ;;
+        -w) # set path/to/dir/ directory where apaxy will be installed on the filesystem
+            shiftStep=2
+            installWebPath="${2}"
+            ;;
+        -ll) # set the log level
+            shiftStep=2
+            logLevel="${2}"
+            ;;
+        -lf) # set the log file
+            shiftStep=2
+            logFile="${2}"
+            ;;
+        *)
+            displayUsage
+            exit 2
+            ;;
+    esac
 
-if [ -v HTACCESS ]; then
-    if [ -f "$HTACCESS" ]; then
-        echo "- Using template: $HTACCESS to generate configuration"
+    if [ "$#" -ge "${shiftStep}" ]
+    then
+        shift "${shiftStep}"
     else
-        echo "Configuration template does not exist! Please specify an existing configuration template in $CONFIG"
-        exit 1
+        log 1 "ERROR - invalid number of arguments"
+        exit 3
     fi
+done
+
+# setting parameters value
+if [ -z "${apacheWebRootPath}" ]
+then
+    apacheWebRootPath="${defaultApacheWebRootPath}"
+fi
+
+if [ -z "${installWebPath}" ]
+then
+    installWebPath="${defaultInstallWebPath}"
+fi
+
+if [ -n "${apacheWebRootPath}" ] && [ -z "${installWebPath}" ]
+then
+    installDir="${apacheWebRootPath}"
 else
-    echo "No configuration template specified. Please define the HTACCESS variable in $CONFIG"
-    exit 1
+    installDir="${apacheWebRootPath}${installWebPath}"
 fi
 
-if [ ! -v TEMPLATE_VAR_FOLDERNAME ]; then
-    echo "No foldername variable defined. Please define the TEMPLATE_VAR_FOLDERNAME variable in $CONFIG"
-    exit
+if [ -z "${logLevel}" ]
+then
+    logLevel="${defaultLogLevel}"
 fi
 
-echo "Configuring..."
-echo "- Generating .htaccess..."
-sed "s|$TEMPLATE_VAR_FOLDERNAME|$INSTALL_DIRECTORY/apaxy/|g" <"$HTACCESS" >"$HTACCESS_OUTPUT"
+if [ -z "${logFile}" ]
+then
+    logFile="${workingDirectory}/${defaultLogFile}"
+fi
 
-echo "- Setting variables in documents..."
-# find all the HTML files and replace the variable in them.
-# This will automatically take care of the error pages, headers and
-# footers.
-FILES=$(find -name "*.html")
+# enabling strict mode
+# -u - undefined variables are forbidden (enable this option after getting parameters from $1 $2...)
+set -u
+
+# checking parameters value
+if [ ! -d "$(dirname "${logFile}")" ]
+then
+    log 1 "ERROR - $(dirname "${logFile}") does not exist"
+    exit 4
+fi
+
+# script
+log 1 "- creating install directory ${installDir}"
+mkdir -p "${installDir}"
+if [ ! -d "${installDir}" ] || [ ! -w "${installDir}" ]; then
+    log 1 "ERROR - install directory ${installDir} does not exist or is not writable by the current user"
+    exit 5
+fi
+
+log 1 "- copying apaxy in install directory"
+cp -r apaxy/* "${installDir}/"
+
+log 1 "- configuring apaxy in install directory"
+
+log 2 "- generating htaccess"
+sed "s|{FOLDERNAME}|${installWebPath}|g" < "${installDir}/htaccess.txt" > "${installDir}/.htaccess"
+rm "${installDir}/htaccess.txt"
+
+# find all the html files and replace the variable in them
+# this will automatically take care of the error pages, headers and footers
+log 2 "- setting path in html files"
+files=$(find ${installDir} -name "*.html")
 while read -r file; do
-    sed -i "s|$TEMPLATE_VAR_FOLDERNAME|$INSTALL_DIRECTORY/apaxy/|g" "$file"
-done <<< "$FILES"
+    sed -i "s|{FOLDERNAME}|${installWebPath}|g" "${file}"
+done <<< "${files}"
 
-if [ -v THEME_HTACCESS_IN ] && [ -v THEME_HTACCESS_OUT ]; then
-    echo "- Activating theme configuration..."
-    mv "$THEME_HTACCESS_IN" "$THEME_HTACCESS_OUT"
-fi
-
-# TODO:
-# - Implement any other options we want here
-
-echo "Done."
-exit 0
+log 2 "- syncing filesystem"
+sync
+log 1 "- filesystem has been synced and is now consistent"
+log 1 "- apaxy has been successfully configured and installed in ${installDir}"
