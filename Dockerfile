@@ -1,27 +1,29 @@
-FROM php:7.0-apache
-MAINTAINER Inti Gabriel <inti.gabriel+github@intigabriel.de>
+FROM php:7.3-apache
+LABEL authors="Carlos Brandt <chbrandt@github>, Inti Gabriel <inti.gabriel+github@intigabriel.de>"
+
+ARG HTDOCS=/var/www/html
+
+ENV APACHE_RUN_USER=www-data \
+    APACHE_RUN_GROUP=www-data
 
 RUN a2enmod rewrite
-ENV APACHE_RUN_USER=www-data APACHE_RUN_GROUP=www-data APACHE_LOG_DIR=/var/log/apache2 APACHE_LOCK_DIR=/var/lock/apache2 APACHE_PID_FILE=/var/run/apache2.pid
 
 COPY apache-config.conf /etc/apache2/sites-enabled/000-default.conf
-COPY apaxy/ /var/www/html/
-RUN mv /var/www/html/htaccess.txt /var/www/html/.htaccess && \
-mv /var/www/html/theme/htaccess.txt /var/www/html/theme/.htaccess && \
-rm -f /var/www/html/index.html && \
-touch /var/www/html/example.gif && \
-touch /var/www/html/example.jpg && \
-touch /var/www/html/example.txt && \
-touch /var/www/html/example.md && \
-touch /var/www/html/example && \
-touch /var/www/html/example.mp4 && \
-touch /var/www/html/example.zip && \
-touch /var/www/html/example.doc && \
-touch /var/www/html/example.xls && \
-touch /var/www/html/example.pdf && \
-touch /var/www/html/example.tex && \
-touch /var/www/html/example.c && \
-touch /var/www/html/example.mp3
+
+COPY apaxy/ $HTDOCS
+
+RUN cd ${HTDOCS}                                            && \
+    rm -f index.html                                        && \
+    sed -i "s:/{FOLDERNAME}::g" htaccess.txt                && \
+    sed -i "s:/{FOLDERNAME}::g" theme/htaccess.txt          && \
+    grep -l "{FOLDERNAME}" theme/*.html | xargs -L1 -I {}   \
+        sed -i "s:/{FOLDERNAME}::g" {}                      && \
+    mv htaccess.txt .htaccess                               && \
+    mv theme/htaccess.txt theme/.htaccess
+
+
+RUN ["/bin/bash", "-c", \
+    "cd $HTDOCS && touch example.{gif,jpg,txt,md,mp4,zip,doc,xls,pdf,tex,c,mp3}"]
 
 EXPOSE 80
 
