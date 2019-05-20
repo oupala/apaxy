@@ -28,6 +28,23 @@ _Sadly, visual style is all you can work with. It's not possible to alter the ge
 
 Apaxy requires an Apache(2.2.11+) enabled HTTP server.
 
+### Quick Start
+If you would like, you can automate the installation of Apaxy with the included `apaxy-configure.sh` script.
+
+To get started, first open `apaxy.config` in your favorite editor:
+
+	$ vim apaxy.config
+
+Edit the WEB_ROOT and INSTALL_DIRECTORY variables to correspond to your server's settings, then save and exit.
+
+Then run the configuration script as a user that can write to the install directory. With Apache, this would be the `www-data` user:
+
+	$ sudo -u www-data ./apaxy-configure.sh
+
+The files will be copied to the web server directory, and modified automatically based on the settings specified.
+
+### Manual Install
+
 Let's assume you have a folder named `share` in your server root directory (the path thus being `http://mywebsite.com/share`) that you'd like to use as your listing directory:
 
 * [Download](https://github.com/AdamWhitcroft/Apaxy/archive/master.zip) and unzip Apaxy
@@ -37,7 +54,7 @@ Let's assume you have a folder named `share` in your server root directory (the 
 So...
 
 ```ApacheConf
-AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
+AddIcon {FOLDERNAME}/theme/icons/gif.png .gif
 ```
 
 Should be changed to...
@@ -46,12 +63,12 @@ Should be changed to...
 AddIcon /share/theme/icons/gif.png .gif
 ```
 
-* Edit `footer.html`, `400.html`, `403.html`, `404.html`, `408.html`, `500.html`, `502.html` (now in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
+* Edit `footer.html`, along with all the other `html` documents (in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
 
 So...
 
 ```html
-<script src=/{FOLDERNAME}/theme/apaxy.js></script>
+<script src={FOLDERNAME}/theme/apaxy.js></script>
 ```
 
 Should be changed to...
@@ -60,7 +77,7 @@ Should be changed to...
 <script src=/share/theme/apaxy.js></script>
 ```
 
-* Once done, rename `htaccess.txt` to `.htaccess` in both the `/share` and `/share/theme` folders.
+* Once done, rename `htaccess.txt` to `.htaccess` in the `/share` directory.
 * [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
 
 ## Docker images
@@ -83,10 +100,10 @@ Edit these as you would any other HTML or CSS file.
 Adding your own icons is a little more involved. You'll need to edit the main Apaxy `.htaccess` file. Look for the following as an example:
 
 ```ApacheConf
-AddIcon /{FOLDERNAME}/theme/icons/gif.png .gif
+AddIcon {FOLDERNAME}/theme/icons/gif.png .gif
 ```
 
-The above rule will assign an icon named `gif.png` from the directory `/{FOLDERNAME}/theme/icons/` to any file with the `.gif` extension.
+The above rule will assign an icon named `gif.png` from the directory `{FOLDERNAME}/theme/icons/` to any file with the `.gif` extension.
 
 This URL path is relative to your site's root.
 
