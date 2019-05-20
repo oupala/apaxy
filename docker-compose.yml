@@ -1,5 +1,13 @@
-apaxy:
-  build: .
-  ports:
-    - "80:80"
-
+version: '3'
+services:
+  apaxy:
+    image: apaxy
+    build:
+      context: .
+      args:
+        apaxyPath: ''
+    ports:
+      - '80:8080'
+    volumes:
+      - './share/:/usr/local/apache2/htdocs/share/'
+    image: apaxy
