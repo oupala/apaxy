@@ -1,43 +1,40 @@
 # Apaxy
 
-Apaxy is a customisable theme built to enhance the experience of browsing web directories. It uses the `mod_autoindex` Apache module—and some CSS—to override the default style of a directory listing.
+apaxy is a customisable theme built to enhance the experience of browsing web directories. It uses the `mod_autoindex` Apache module - and some css - to override the default style of a directory listing.
 
-## Table of Contents
+## Table of contents
 
-- [Features](#features)
-- [Installation](#installation)
-- [Docker images](#docker-images)
-- [Apaxy themes](#apaxy-themes)
-- [Mime Types](#mime-types)
-- [Troubleshooting](#troubleshooting)
-- [Credits](#credits)
+- [features](#features)
+- [installation](#installation)
+- [docker images](#docker-images)
+- [apaxy themes](#apaxy-themes)
+- [mime Types](#mime-types)
+- [troubleshooting](#troubleshooting)
+- [credits](#credits)
 
 ## Features
 
 Apaxy may be basic, but it gives you a great deal of creative freedom when styling your directory.
 
-* Style your directory listing with CSS.
-* Make it pop with Javascript or jQuery.
-* Add welcome messages, download instructions or copyright notices.
-* Add custom mime type icons (requires editing the `.htaccess` file)
-* Use custom error pages.
+* style your directory listing with css
+* make it pop with javascript
+* add welcome messages, download instructions or copyright notices
+* add custom media type icons (requires editing the `.htaccess` file)
+* use custom error pages
 
-_Sadly, visual style is all you can work with. It's not possible to alter the generated table structure of the listing directory with Apaxy._
+*Sadly, visual style is all you can work with. It's not possible to alter the generated table structure of the listing directory with Apaxy.*
 
 ## Installation
 
-Apaxy requires an Apache(2.2.11+) enabled HTTP server.
+apaxy requires an apache (2.2.11+) enabled http server.
 
 ### Quick Start
+
 If you would like, you can automate the installation of Apaxy with the included `apaxy-configure.sh` script.
 
-To get started, first open `apaxy.config` in your favorite editor:
+To get started, first open `apaxy.config` in your favorite editor, then edit the `apacheWebRootPath` and `installWebPath` variables to correspond to your server's settings. Save the file and exit.
 
-	$ vim apaxy.config
-
-Edit the WEB_ROOT and INSTALL_DIRECTORY variables to correspond to your server's settings, then save and exit.
-
-Then run the configuration script as a user that can write to the install directory. With Apache, this would be the `www-data` user:
+Then run the configuration script as a user that can write to the `installWebPath` directory. With apache under debian, this would be the `www-data` user:
 
 	$ sudo -u www-data ./apaxy-configure.sh
 
@@ -47,23 +44,23 @@ The files will be copied to the web server directory, and modified automatically
 
 Let's assume you have a folder named `share` in your server root directory (the path thus being `http://mywebsite.com/share`) that you'd like to use as your listing directory:
 
-* [Download](https://github.com/AdamWhitcroft/Apaxy/archive/master.zip) and unzip Apaxy
-* Copy and paste the contents of the `/apaxy` folder to your `/share` folder.
-* Edit `htaccess.txt` (now in the `/share` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
+- [download](https://github.com/oupala/apaxy/archive/master.zip) and unzip apaxy
+- copy and paste the contents of the `/apaxy` folder to your `/share` folder
+- edit `htaccess.txt` (now in the `/share` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root
 
 So...
 
-```ApacheConf
-AddIcon {FOLDERNAME}/theme/icons/gif.png .gif
+```apache
+AddIconByType (gif,{FOLDERNAME}/theme/icons/gif.png) image/gif
 ```
 
 Should be changed to...
 
-```ApacheConf
-AddIcon /share/theme/icons/gif.png .gif
+```apache
+AddIconByType (gif,/share/theme/icons/gif.png) image/gif
 ```
 
-* Edit `footer.html`, along with all the other `html` documents (in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root.
+- edit `footer.html`, along with all the other `html` documents (in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root
 
 So...
 
@@ -77,54 +74,51 @@ Should be changed to...
 <script src=/share/theme/apaxy.js></script>
 ```
 
-* Once done, rename `htaccess.txt` to `.htaccess` in the `/share` directory.
-* [Treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done.
+* once done, rename `htaccess.txt` to `.htaccess` in the `/share` directory
+* [treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done!
 
-## Docker images
+## Docker image
 
 A [local Demo](http://localhost:8080) can be started with docker.
-`docker-compose build`
-`docker-compose up`
 
+```bash
+docker-compose up
+```
 
 ## Apaxy themes
 
 If you'd like to alter the default Apaxy theme, look in the `/theme` folder and you'll find the following files:
 
-* `header.html`
-* `footer.html`
-* `style.css`
+- `header.html`
+- `footer.html`
+- `style.css`
 
-Edit these as you would any other HTML or CSS file.
+Edit these as you would any other html or css file.
 
 Adding your own icons is a little more involved. You'll need to edit the main Apaxy `.htaccess` file. Look for the following as an example:
 
-```ApacheConf
-AddIcon {FOLDERNAME}/theme/icons/gif.png .gif
+```apache
+AddIconByType (gif,{FOLDERNAME}/theme/icons/gif.png) image/gif
 ```
 
-The above rule will assign an icon named `gif.png` from the directory `{FOLDERNAME}/theme/icons/` to any file with the `.gif` extension.
+The above rule will assign an icon named `gif.png` from the directory `{FOLDERNAME}/theme/icons/` to any file whose media type is `image/gif`.
 
-This URL path is relative to your site's root.
+This url path is relative to your site's root.
 
-## Mime Types
+## Media types
 
-The default Apaxy theme `/themes/apaxy` has icons in place for the following mime types:
+The default apaxy theme `/themes/apaxy` has icons in place for the following media types:
 
-    .aif .aif .asf .asx .avi .bin .c .css .csv .dmg .doc .docm .docx .dot .dotm .eps .flv .gif 
-    .htm .html .ico .iff .jar .jpeg .jpg .js .json .log .m3u .m4a .md .mid .mov .mp3 .mp4 .mpa 
-    .mpg .msg .mwa .odt .pages .pdf .pkg .png .ps .psd .ra .rar .rb .rm .rss .rtf .shtml 
-    .sql .srt .swf .tex .tiff .txt .vob .wav .wmv .wpd .wps .xhtml .xlam .xlr .xls .xlsm .xlsx 
-    .xltm .xltx .xml .zip
+3dml 3ds 3g2 3gp 7z aac adp ai aif aifc aiff apk appcache asf asm asx atom au avi azw bat bin bmp bpk btif bz bz2 c cab caf cb7 cba cbr cbt cbz cc cgm class cmx com conf cpp css csv curl cxx dcurl deb def deploy dic diff dist distz djv djvu dll dmg dms doc docx dot dra dsc dtd dts dtshd dump dvb dwg dxf ecelp4800 ecelp7470 ecelp9600 elc eol eps epub etx exe f f4v f77 f90 fbs fh fh4 fh5 fh7 fhc flac fli flv flx fly for fpx fst fvt g3 gif gv gz gzip h h261 h263 h264 hh hpp htm html ico ics ief ifb in iso jad jar java jpe jpeg jpg jpgm jpgv jpm js json kar ktx latex list log lrf lvp m1v m2a m2v m3a m3u m3u8 m4a m4u m4v Makefile man mar markdown mcurl md mdb mdi me mid midi mj2 mjp2 mk3d mka mks mkv mmr mng mobi mov movie mp2 mp2a mp3 mp4 mp4a mp4v mpe mpeg mpg mpg4 mpga mpkg ms msi mxu n3 nfo npx odb odc odf odft odg odi odm odp ods odt oga ogg ogv opml otc otf otg oth oti otp ots ott p pas patch pbm pct pcx pdf pgm php phtml pic pkg pls png pnm pot ppm pps ppsx ppt pptx prc ps psd py pya pyv qt ra ram rar ras rb README rgb rip rlc rmi rmp roff rpm rss rtf rtx s s3m sass scss scurl sfv sgi sgm sgml sh sid sil smv snd so spot spx sql sub svg svgz t tar tex text tga tif tiff torrent tr tsv ttc ttf ttl txt udeb uri uris urls uu uva uvg uvh uvi uvm uvp uvs uvu uvv uvva uvvg uvvh uvvi uvvm uvvp uvvs uvvu uvvv vcard vcf vcs viv vob wav wax wbmp wdp weba webm webp wm wma wml wmls wmv wmx woff woff2 wvx xbm xht xhtml xif xla xlc xlm xls xlsx xlt xlw xm xml xpmxwd xsl zip
 
 ## Troubleshooting
 
-Make sure the options set in `.htaccess` files of Apaxy can actually be changed. This means that you need to allow to ovveride the used options in your apache configuration of the directory apaxy used with: `AllowOverride Indexes`
+Make sure the options set in `.htaccess` files of Apaxy can actually be changed. This means that you need to allow to override the used options in your apache configuration of the directory apaxy used with: `AllowOverride Indexes`.
 
-Find more information in the in the [apache documentation](https://httpd.apache.org/docs/2.2/de/mod/core.html).
+Find more information in the in the [apache documentation](https://httpd.apache.org/docs/current/mod/core.html#allowoverride).
 
 ## Credits
 
-Apaxy owes its existence to the amazing [h5ai](http://larsjung.de/h5ai/) by [Lars Jung](https://twitter.com/lrsjng). Had I not seen this, I would never have looked into making my own (probably way less useful) version.
+apaxy owes its existence to the amazing [h5ai](http://larsjung.de/h5ai/) by [Lars Jung](https://twitter.com/lrsjng). Had I not seen this, I would never have looked into making my own (probably way less useful) version.
 
 [Faenza Icons](http://tiheum.deviantart.com/art/Faenza-Icons-173323228) are used in the `apaxy` theme.
