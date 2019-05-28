@@ -1,4 +1,24 @@
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css" type="text/css" rel="stylesheet" crossorigin="anonymous" />
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.gallery.min.css" type="text/css" rel="stylesheet" crossorigin="anonymous" />
+
+<script src="//code.jquery.com/jquery-latest.js" crossorigin="anonymous"></script>
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js" type="text/javascript" charset="utf-8" crossorigin="anonymous"></script>
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.gallery.min.js" type="text/javascript" charset="utf-8" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $('td.indexcolname a[href$=".png"]').featherlightGallery({
+            previousIcon: '&#9664;',     /* Code that is used as previous icon */
+            nextIcon: '&#9654;',         /* Code that is used as next icon */
+            galleryFadeIn: 100,          /* fadeIn speed when slide is loaded */
+            galleryFadeOut: 300          /* fadeOut speed before slide is loaded */
+        });
+    });
+</script>
 <div class="wrapper">
+    <ol class="breadcrumb" id="breadcrumbs">
+    </ol>
 <!-- we open the `wrapper` element here, but close it in the `footer.html` file -->
 
 <input type="search" id="filter" placeholder="filter contents" />
