@@ -9,9 +9,6 @@ button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-bloc
     Theme author: @adamwhitcroft
 \*------------------------------------*/
 
-@import url('//fonts.googleapis.com/css?family=Open+Sans');
-
-/* Have to use @import for the font, as you can only specify a single stylesheet */
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +24,7 @@ html {
   color: #61666c;
   font-weight: 400;
   font-size: 1em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: sans-serif;
   line-height: 2em;
 }
 
