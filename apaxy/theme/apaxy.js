@@ -74,3 +74,29 @@ if (uri.substring(uri.length - 1) !== '/') {
 	});
 
 })(document);
+
+// generate a breadcrumb
+var uri = window.location.pathname.substr(1);
+var arr = uri.split('/');
+var url = ""
+var bread = '<li><strong><a href="/">Home</a></strong></li>';
+var cont = 1;
+arr.forEach(function(value){
+        url = url + '/' + value;
+        if(value != ''){
+            if(arr.length == cont+1)
+                bread += "<li class='active'>"+decodeURI(value)+"</li>";
+            else
+                bread += "<li><a href='"+url+"'>"+decodeURI(value)+"</a></li>";
+        }
+        cont++;
+});
+document.getElementById("breadcrumbs").innerHTML = bread;
+if (uri.substring(uri.length-1) != '/'){
+        var indexes = document.getElementsByClassName('indexcolname'),
+        i = indexes.length;
+        while (i--){
+            var a = indexes[i].getElementsByTagName('a')[0];
+            a.href =  uri + '/' + a.getAttribute('href',2);
+        }
+}
