@@ -1,3 +1,29 @@
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.9/css/lightgallery.min.css" /> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.9/js/lightgallery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    var imageSelector = [
+        '.indexcolname a:contains(".jpg"):not(:contains(".json"))',
+        '.indexcolname a:contains(".jpeg"):not(:contains(".json"))',
+        '.indexcolname a:contains(".png"):not(:contains(".json"))',
+    ].join(', ');
+
+    var $table = $('table'),
+        $images = $table.find(imageSelector);
+
+    if ($table.length && $images.length) {
+        $table.lightGallery({
+            selector: imageSelector,
+            mode: 'lg-fade',
+            download: true
+        });
+    }
+});
+</script>
+
 <div class="wrapper">
 <!-- we open the `wrapper` element here, but close it in the `footer.html` file -->
 
