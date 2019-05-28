@@ -34,6 +34,8 @@ If you would like, you can automate the installation of Apaxy with the included 
 
 To get started, first open `apaxy.config` in your favorite editor, then edit the `apacheWebRootPath` and `installWebPath` variables to correspond to your server's settings. Save the file and exit.
 
+You can set some parameters of `apaxy.config` on the command line instead of the config file. You can see the documentation of the cli with the following command: `apaxy-configure.sh -h`.
+
 Then run the configuration script as a user that can write to the `installWebPath` directory. With apache under debian, this would be the `www-data` user:
 
 	$ sudo -u www-data ./apaxy-configure.sh
@@ -58,6 +60,13 @@ Should be changed to...
 
 ```apache
 AddIconByType (gif,/share/theme/icons/gif.png) image/gif
+```
+
+- if you want to enable the [gallery](#gallery) feature, overwrite the header and footer files:
+
+```bash
+mv footer-lightgallery.html footer.html
+mv header-lightgallery.html header.html
 ```
 
 - edit `footer.html`, along with all the other `html` documents (in the `/share/theme` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root
@@ -110,6 +119,12 @@ This url path is relative to your site's root.
 The default apaxy theme `/themes/apaxy` has icons in place for the following media types:
 
 3dml 3ds 3g2 3gp 7z aac adp ai aif aifc aiff apk appcache asf asm asx atom au avi azw bat bin bmp bpk btif bz bz2 c cab caf cb7 cba cbr cbt cbz cc cgm class cmx com conf cpp css csv curl cxx dcurl deb def deploy dic diff dist distz djv djvu dll dmg dms doc docx dot dra dsc dtd dts dtshd dump dvb dwg dxf ecelp4800 ecelp7470 ecelp9600 elc eol eps epub etx exe f f4v f77 f90 fbs fh fh4 fh5 fh7 fhc flac fli flv flx fly for fpx fst fvt g3 gif gv gz gzip h h261 h263 h264 hh hpp htm html ico ics ief ifb in iso jad jar java jpe jpeg jpg jpgm jpgv jpm js json kar ktx latex list log lrf lvp m1v m2a m2v m3a m3u m3u8 m4a m4u m4v Makefile man mar markdown mcurl md mdb mdi me mid midi mj2 mjp2 mk3d mka mks mkv mmr mng mobi mov movie mp2 mp2a mp3 mp4 mp4a mp4v mpe mpeg mpg mpg4 mpga mpkg ms msi mxu n3 nfo npx odb odc odf odft odg odi odm odp ods odt oga ogg ogv opml otc otf otg oth oti otp ots ott p pas patch pbm pct pcx pdf pgm php phtml pic pkg pls png pnm pot ppm pps ppsx ppt pptx prc ps psd py pya pyv qt ra ram rar ras rb README rgb rip rlc rmi rmp roff rpm rss rtf rtx s s3m sass scss scurl sfv sgi sgm sgml sh sid sil smv snd so spot spx sql sub svg svgz t tar tex text tga tif tiff torrent tr tsv ttc ttf ttl txt udeb uri uris urls uu uva uvg uvh uvi uvm uvp uvs uvu uvv uvva uvvg uvvh uvvi uvvm uvvp uvvs uvvu uvvv vcard vcf vcs viv vob wav wax wbmp wdp weba webm webp wm wma wml wmls wmv wmx woff woff2 wvx xbm xht xhtml xif xla xlc xlm xls xlsx xlt xlw xm xml xpmxwd xsl zip
+
+## Gallery
+
+You can enable a gallery feature on apaxy. This feature is based on [lightgallery.js](https://sachinchoolur.github.io/lightgallery.js/).
+
+See [installation](#installation) section for more information.
 
 ## Troubleshooting
 

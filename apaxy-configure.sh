@@ -20,6 +20,7 @@ defaultLogLevel=2
 defaultLogFile="$(basename "${0}" .sh).log"
 defaultApacheWebRootPath="/var/www/html"
 defaultInstallWebPath=""
+defaultEnableGallery=false
 
 # functions
 
@@ -40,6 +41,7 @@ Available optionnal parameters are :
   -h  - display help
   -d  - set path/to/dir/ directory where apaxy will be installed on the filesystem
   -w  - set path/to/dir/ directory where apaxy will be available on the httpd server
+  -g  - enable or disable gallery feature
   -ll - set the log level
   -lf - set the log file
 EOF
@@ -50,7 +52,7 @@ EOF
  ##
 displayUsage () {
     cat <<EOF
-usage - $(basename "${0}") [-h] [-d path/to/dir/] [-w path/to/dir/] [-ll logLevel] [-lf logFile]
+usage - $(basename "${0}") [-h] [-d path/to/dir/] [-w path/to/dir/] [-g true|false] [-ll logLevel] [-lf logFile]
 EOF
 }
 
@@ -107,6 +109,10 @@ while [ "$#" -ge 1 ] ; do
             shiftStep=2
             installWebPath="${2}"
             ;;
+        -g) # enable or disable gallery feature
+            shiftStep=2
+            enableGallery="${2}"
+            ;;
         -ll) # set the log level
             shiftStep=2
             logLevel="${2}"
@@ -148,6 +154,11 @@ else
     installDir="${apacheWebRootPath}${installWebPath}"
 fi
 
+if [ -z "${enableGallery}" ]
+then
+    enableGallery="${defaultEnableGallery}"
+fi
+
 if [ -z "${logLevel}" ]
 then
     logLevel="${defaultLogLevel}"
@@ -185,6 +196,15 @@ log 1 "- configuring apaxy in install directory"
 log 2 "- generating htaccess"
 sed "s|{FOLDERNAME}|${installWebPath}|g" < "${installDir}/htaccess.txt" > "${installDir}/.htaccess"
 rm "${installDir}/htaccess.txt"
+
+if [ "${enableGallery}" = "true" ]
+then
+    log 1 "- enabling gallery feature"
+    mv -f "${installDir}/theme/header-lightgallery.html" "${installDir}/theme/header.html"
+    mv -f "${installDir}/theme/footer-lightgallery.html" "${installDir}/theme/footer.html"
+else
+    log 2 "- gallery feature not enabled"
+fi
 
 # find all the html files and replace the variable in them
 # this will automatically take care of the error pages, headers and footers
