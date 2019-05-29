@@ -22,8 +22,8 @@ IndexOptions +Charset=UTF-8 +FancyIndexing +FoldersFirst +HTMLTable +IconsAreLin
 # meta viewport
 IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
 
-# hide ".htaccess" file and "/theme" directory
-IndexIgnore .htaccess /theme
+# hide ".htaccess" file, "favicon.ico" file and "/theme" directory
+IndexIgnore .htaccess favicon.ico /theme
 
 
 #
