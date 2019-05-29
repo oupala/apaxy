@@ -91,7 +91,7 @@ arr.forEach(function(value){
         }
         cont++;
 });
-document.getElementById("breadcrumbs").innerHTML = bread;
+document.getElementById("breadcrumb").innerHTML = bread;
 if (uri.substring(uri.length-1) != '/'){
         var indexes = document.getElementsByClassName('indexcolname'),
         i = indexes.length;
