@@ -21,6 +21,8 @@ defaultLogFile="$(basename "${0}" .sh).log"
 defaultApacheWebRootPath="/var/www/html"
 defaultInstallWebPath=""
 defaultEnableGallery=false
+defaultHeaderMessage="default header message"
+defaultFooterMessage="default footer message"
 
 workingDirectory="$(dirname "${0}")"
 
@@ -44,6 +46,8 @@ Available optionnal parameters are :
   -d  - set path/to/dir/ directory where apaxy will be installed on the filesystem
   -w  - set path/to/dir/ directory where apaxy will be available on the httpd server
   -g  - enable or disable gallery feature
+  -hm - set the default header message displayed on top of each page
+  -fm - set the default footer message displayed on bottom of each page
   -ll - set the log level
   -lf - set the log file
 EOF
@@ -54,7 +58,7 @@ EOF
  ##
 displayUsage () {
     cat <<EOF
-usage - $(basename "${0}") [-h] [-d path/to/dir/] [-w path/to/dir/] [-g true|false] [-ll logLevel] [-lf logFile]
+usage - $(basename "${0}") [-h] [-d path/to/dir/] [-w path/to/dir/] [-g true|false] [-hm "header message"] [-fm "footer message"] [-ll logLevel] [-lf logFile]
 EOF
 }
 
@@ -113,6 +117,14 @@ while [ "$#" -ge 1 ] ; do
             shiftStep=2
             enableGallery="${2}"
             ;;
+        -hm) # set the default header message displayed on top of each page
+            shiftStep=2
+            headerMessage="${2}"
+            ;;
+        -fm) # set the default footer message displayed on bottom of each page
+            shiftStep=2
+            footerMessage="${2}"
+            ;;
         -ll) # set the log level
             shiftStep=2
             logLevel="${2}"
@@ -157,6 +169,16 @@ fi
 if [ -z "${enableGallery}" ]
 then
     enableGallery="${defaultEnableGallery}"
+fi
+
+if [ -z "${headerMessage}" ]
+then
+    headerMessage="${defaultHeaderMessage}"
+fi
+
+if [ -z "${footerMessage}" ]
+then
+    footerMessage="${defaultFooterMessage}"
 fi
 
 if [ -z "${logLevel}" ]
@@ -212,6 +234,8 @@ log 2 "- setting path in html files"
 files=$(find ${installDir} -name "*.html")
 while read -r file; do
     sed -i "s|{FOLDERNAME}|${installWebPath}|g" "${file}"
+    sed -i "s|{HEADER-MESSAGE}|${headerMessage}|g" "${file}"
+    sed -i "s|{FOOTER-MESSAGE}|${footerMessage}|g" "${file}"
 done <<< "${files}"
 
 log 2 "- syncing filesystem"
