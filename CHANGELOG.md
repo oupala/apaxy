@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/oupala/apaxy/compare/2.0.0...2.0.1) (2019-05-30)
+
+
+### Bug Fixes
+
+* make the script apaxy-configure.sh more robust ([367722a](https://github.com/oupala/apaxy/commit/367722a))
+
+
+
 # [2.0.0](https://github.com/oupala/apaxy/compare/1.0.0...2.0.0) (2019-05-29)
 
 
