@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/oupala/apaxy/compare/2.0.1...2.1.0) (2019-05-30)
+
+
+### Features
+
+* install script can set a header and a footer message ([8f85f2c](https://github.com/oupala/apaxy/commit/8f85f2c))
+
+
+
 ## [2.0.1](https://github.com/oupala/apaxy/compare/2.0.0...2.0.1) (2019-05-30)
 
 
