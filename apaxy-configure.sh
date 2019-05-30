@@ -22,6 +22,8 @@ defaultApacheWebRootPath="/var/www/html"
 defaultInstallWebPath=""
 defaultEnableGallery=false
 
+workingDirectory="$(dirname "${0}")"
+
 # functions
 
 ###
@@ -84,8 +86,6 @@ log () {
 }
 
 # getting parameters value from config file (can be overloaded by cli values)
-workingDirectory=$(dirname "$0")
-
 if [ -f "${workingDirectory}/apaxy.config" ]; then
     # shellcheck source=apaxy.config
     source "${workingDirectory}/apaxy.config"
@@ -189,7 +189,7 @@ if [ ! -d "${installDir}" ] || [ ! -w "${installDir}" ]; then
 fi
 
 log 1 "- copying apaxy in install directory"
-cp -r apaxy/* "${installDir}/"
+cp -r ${workingDirectory}/apaxy/* "${installDir}/"
 
 log 1 "- configuring apaxy in install directory"
 
