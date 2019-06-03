@@ -16,15 +16,17 @@ set -eo pipefail
 IFS=$'\n\t'
 
 # default config
-defaultLogLevel=2
-defaultLogFile="$(basename "${0}" .sh).log"
+defaultConfigFile="apaxy.config"
 defaultApacheWebRootPath="/var/www/html"
 defaultInstallWebPath=""
 defaultEnableGallery=false
-defaultHeaderMessage="default header message"
-defaultFooterMessage="default footer message"
+defaultHeaderMessage=""
+defaultFooterMessage=""
+defaultLogLevel=2
+defaultLogFile="$(basename "${0}" .sh).log"
 
 workingDirectory="$(dirname "${0}")"
+logLevel="${defaultLogLevel}"
 
 # functions
 
@@ -43,6 +45,7 @@ EOF
 
 Available optionnal parameters are :
   -h  - display help
+  -c  - set path/to/apaxy.config file that contains all configuration
   -d  - set path/to/dir/ directory where apaxy will be installed on the filesystem
   -w  - set path/to/dir/ directory where apaxy will be available on the httpd server
   -g  - enable or disable gallery feature
@@ -58,7 +61,7 @@ EOF
  ##
 displayUsage () {
     cat <<EOF
-usage - $(basename "${0}") [-h] [-d path/to/dir/] [-w path/to/dir/] [-g true|false] [-hm "header message"] [-fm "footer message"] [-ll logLevel] [-lf logFile]
+usage - $(basename "${0}") [-h] [-c path/to/apaxy.config] [-d path/to/dir/] [-w path/to/dir/] [-g true|false] [-hm "header message"] [-fm "footer message"] [-ll logLevel] [-lf logFile]
 EOF
 }
 
@@ -89,15 +92,6 @@ log () {
     fi
 }
 
-# getting parameters value from config file (can be overloaded by cli values)
-if [ -f "${workingDirectory}/apaxy.config" ]; then
-    # shellcheck source=apaxy.config
-    source "${workingDirectory}/apaxy.config"
-else
-    log 1 "ERROR - apaxy configuration not found, please restore or create the configuration file apaxy.config"
-    exit 1
-fi
-
 # getting parameters value from cli (can overload config file values)
 while [ "$#" -ge 1 ] ; do
     case "${1}" in
@@ -105,33 +99,37 @@ while [ "$#" -ge 1 ] ; do
             displayHelp
             exit 0
             ;;
+        -c) # set path/to/apaxy.config file that contains all configuration
+            shiftStep=2
+            paramConfigFile="${2}"
+            ;;
         -d) # set path/to/dir/ directory where apaxy will be available on the httpd server
             shiftStep=2
-            apacheWebRootPath="${2}"
+            paramApacheWebRootPath="${2}"
             ;;
         -w) # set path/to/dir/ directory where apaxy will be installed on the filesystem
             shiftStep=2
-            installWebPath="${2}"
+            paramInstallWebPath="${2}"
             ;;
         -g) # enable or disable gallery feature
             shiftStep=2
-            enableGallery="${2}"
+            paramEnableGallery="${2}"
             ;;
         -hm) # set the default header message displayed on top of each page
             shiftStep=2
-            headerMessage="${2}"
+            paramHeaderMessage="${2}"
             ;;
         -fm) # set the default footer message displayed on bottom of each page
             shiftStep=2
-            footerMessage="${2}"
+            paramFooterMessage="${2}"
             ;;
         -ll) # set the log level
             shiftStep=2
-            logLevel="${2}"
+            paramLogLevel="${2}"
             ;;
         -lf) # set the log file
             shiftStep=2
-            logFile="${2}"
+            paramLogFile="${2}"
             ;;
         *)
             displayUsage
@@ -149,44 +147,93 @@ while [ "$#" -ge 1 ] ; do
 done
 
 # setting parameters value
-if [ -z "${apacheWebRootPath}" ]
+if [ -r "${paramConfigFile}" ]
+then
+    # getting parameters value from config file (config file name set by cli values)
+    configFile="${paramConfigFile}"
+    # shellcheck source=apaxy.config
+    source "${configFile}"
+elif [ -r "${workingDirectory}/${defaultConfigFile}" ]
+then
+    # getting parameters value from config file (config file name is default)
+    configFile="${workingDirectory}/${defaultConfigFile}"
+    # shellcheck source=apaxy.config
+    source "${configFile}"
+else
+    log 1 "apaxy configuration not found, using internal config from script shell itself"
+    configFile=null
+fi
+
+if [ -n "${paramApacheWebRootPath}" ]
+then
+    apacheWebRootPath="${paramApacheWebRootPath}"
+elif [ -z "${apacheWebRootPath}" ]
 then
     apacheWebRootPath="${defaultApacheWebRootPath}"
 fi
 
-if [ -z "${installWebPath}" ]
+if [ -n "${paramInstallWebPath}" ]
+then
+    installWebPath="${paramInstallWebPath}"
+elif [ -z "${installWebPath}" ]
 then
     installWebPath="${defaultInstallWebPath}"
 fi
 
-if [ -n "${apacheWebRootPath}" ] && [ -z "${installWebPath}" ]
+if [ -n "${paramApacheWebRootPath}" ]
 then
-    installDir="${apacheWebRootPath}"
-else
-    installDir="${apacheWebRootPath}${installWebPath}"
+    apacheWebRootPath="${paramApacheWebRootPath}"
+elif [ -z "${apacheWebRootPath}" ]
+then
+    apacheWebRootPath="${defaultApacheWebRootPath}"
 fi
 
-if [ -z "${enableGallery}" ]
+if [ -n "${paramInstallWebPath}" ]
+then
+    installWebPath="${paramInstallWebPath}"
+elif [ -z "${installWebPath}" ]
+then
+    installWebPath="${defaultInstallWebPath}"
+fi
+
+installDir="${apacheWebRootPath}${installWebPath}"
+
+if [ -n "${paramEnableGallery}" ]
+then
+    enableGallery="${paramEnableGallery}"
+elif [ -z "${enableGallery}" ]
 then
     enableGallery="${defaultEnableGallery}"
 fi
 
-if [ -z "${headerMessage}" ]
+if [ -n "${paramHeaderMessage}" ]
+then
+    headerMessage="${paramHeaderMessage}"
+elif [ -z "${headerMessage}" ]
 then
     headerMessage="${defaultHeaderMessage}"
 fi
 
-if [ -z "${footerMessage}" ]
+if [ -n "${paramFooterMessage}" ]
+then
+    footerMessage="${paramFooterMessage}"
+elif [ -z "${footerMessage}" ]
 then
     footerMessage="${defaultFooterMessage}"
 fi
 
-if [ -z "${logLevel}" ]
+if [ -n "${paramLogLevel}" ]
+then
+    logLevel="${paramLogLevel}"
+elif [ -z "${logLevel}" ]
 then
     logLevel="${defaultLogLevel}"
 fi
 
-if [ -z "${logFile}" ]
+if [ -n "${paramLogFile}" ]
+then
+    logFile="${paramLogFile}"
+elif [ -z "${logFile}" ]
 then
     logFile="${workingDirectory}/${defaultLogFile}"
 fi
@@ -203,6 +250,19 @@ then
 fi
 
 # script
+
+# output current config
+log 3 "current config"
+log 3 "  configFile: ${configFile}"
+log 3 "  apacheWebRootPath: ${apacheWebRootPath}"
+log 3 "  installWebPath: ${installWebPath}"
+log 3 "  installDir: ${installDir}"
+log 3 "  enableGallery: ${enableGallery}"
+log 3 "  headerMessage: ${headerMessage}"
+log 3 "  footerMessage: ${footerMessage}"
+log 3 "  logLevel: ${logLevel}"
+log 3 "  logFile: ${logFile}"
+
 log 1 "- creating install directory ${installDir}"
 mkdir -p "${installDir}"
 if [ ! -d "${installDir}" ] || [ ! -w "${installDir}" ]; then
@@ -211,6 +271,8 @@ if [ ! -d "${installDir}" ] || [ ! -w "${installDir}" ]; then
 fi
 
 log 1 "- copying apaxy in install directory"
+# we want globbing
+# shellcheck disable=SC2086
 cp -r ${workingDirectory}/apaxy/* "${installDir}/"
 
 log 1 "- configuring apaxy in install directory"
