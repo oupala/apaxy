@@ -252,16 +252,16 @@ fi
 # script
 
 # output current config
-log 3 "current config"
-log 3 "  configFile: ${configFile}"
-log 3 "  apacheWebRootPath: ${apacheWebRootPath}"
-log 3 "  installWebPath: ${installWebPath}"
-log 3 "  installDir: ${installDir}"
-log 3 "  enableGallery: ${enableGallery}"
-log 3 "  headerMessage: ${headerMessage}"
-log 3 "  footerMessage: ${footerMessage}"
-log 3 "  logLevel: ${logLevel}"
-log 3 "  logFile: ${logFile}"
+log 3 "- current config"
+log 3 "    configFile: ${configFile}"
+log 3 "    apacheWebRootPath: ${apacheWebRootPath}"
+log 3 "    installWebPath: ${installWebPath}"
+log 3 "    installDir: ${installDir}"
+log 3 "    enableGallery: ${enableGallery}"
+log 3 "    headerMessage: ${headerMessage}"
+log 3 "    footerMessage: ${footerMessage}"
+log 3 "    logLevel: ${logLevel}"
+log 3 "    logFile: ${logFile}"
 
 log 1 "- creating install directory ${installDir}"
 mkdir -p "${installDir}"
