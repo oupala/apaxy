@@ -1,7 +1,7 @@
 var imageSelector = [
     'tr:not(.parent) td.indexcolname a[href$=".png"]',
     'tr:not(.parent) td.indexcolname a[href$=".jpg"]',
-    'tr:not(.parent) td.indexcolname a[href$=".jpeg"]',
+    'tr:not(.parent) td.indexcolname a[href$=".gif"]',
 ].join(', ');
 
 lightGallery(document.getElementById('indexlist'), {
