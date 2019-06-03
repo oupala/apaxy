@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/oupala/apaxy/compare/2.1.0...2.1.1) (2019-06-03)
+
+
+### Bug Fixes
+
+* improve cli parameters management ([8ca6129](https://github.com/oupala/apaxy/commit/8ca6129))
+
+
+
 # [2.1.0](https://github.com/oupala/apaxy/compare/2.0.1...2.1.0) (2019-05-30)
 
 
