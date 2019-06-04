@@ -1,3 +1,12 @@
+## [2.1.2](https://github.com/oupala/apaxy/compare/2.1.1...2.1.2) (2019-06-04)
+
+
+### Bug Fixes
+
+* add gif extension to image gallery viewer ([5668b92](https://github.com/oupala/apaxy/commit/5668b92))
+
+
+
 ## [2.1.1](https://github.com/oupala/apaxy/compare/2.1.0...2.1.1) (2019-06-03)
 
 
