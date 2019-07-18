@@ -1,13 +1,3 @@
-// fix links when not adding a / at the end of the URI
-var uri = window.location.pathname.substr(1);
-if (uri.substring(uri.length - 1) !== '/') {
-  var indexes = document.getElementsByClassName('indexcolname');
-  for (let i of indexes) {
-    var a = i.getElementsByTagName('a')[0];
-    a.href = '/' + a.getAttribute('href', 2);
-  }
-}
-
 // content filtering, based on "light javascript table filter" by Chris Coyier
 // https://codepen.io/chriscoyier/pen/tIuBL - MIT License
 (function(document) {
