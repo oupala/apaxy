@@ -1,3 +1,12 @@
+## [2.1.3](https://github.com/oupala/apaxy/compare/2.1.2...2.1.3) (2019-07-18)
+
+
+### Bug Fixes
+
+* remove useless js ([afa2e51](https://github.com/oupala/apaxy/commit/afa2e51)), closes [#132](https://github.com/oupala/apaxy/issues/132)
+
+
+
 ## [2.1.2](https://github.com/oupala/apaxy/compare/2.1.1...2.1.2) (2019-06-04)
 
 
