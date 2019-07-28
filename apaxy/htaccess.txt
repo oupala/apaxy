@@ -19,11 +19,13 @@ Options +Indexes
 # index options
 IndexOptions +Charset=UTF-8 +FancyIndexing +FoldersFirst +HTMLTable +IconsAreLinks +IgnoreCase +NameWidth=* +SuppressDescription +SuppressRules +XHTML
 
-# meta viewport
-IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+# favicon & meta viewport
+IndexHeadInsert "\
+        <link rel=\"shortcut icon\" href=\"{FOLDERNAME}/theme/favicon.ico\" />\
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
 
-# hide ".htaccess" file, "favicon.ico" file and "/theme" directory
-IndexIgnore .htaccess favicon.ico /theme
+# hide ".htaccess" file and "/theme" directory
+IndexIgnore .htaccess /theme
 
 
 #
