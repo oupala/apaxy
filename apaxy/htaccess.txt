@@ -125,7 +125,7 @@ AddIconByType (audio,{FOLDERNAME}/theme/icons/audio.png) audio/*
 AddIconByType (playlist,{FOLDERNAME}/theme/icons/video.png) video/vnd.mpegurl
 
 # all video
-# ext: 3g2 3gp h261 h263 h264 jpgv jpm jpgm mj2 mjp2 mp4 mp4v mpg4 mpeg mpg mpe m1v m2v ogv qt mov uvh uvvh uvm uvvm uvp uvvp uvs uvvs uvv uvvv dvb fvt mxu m4u pyv uvu uvvu viv webm f4v fli flv m4v mkv mk3d mks mng asf asx avi vob wmv wm wmx wvx movie smv 
+# ext: 3g2 3gp h261 h263 h264 jpgv jpm jpgm mj2 mjp2 mp4 mp4v mpg4 mpeg mpg mpe m1v m2v ogv qt mov uvh uvvh uvm uvvm uvp uvvp uvs uvvs uvv uvvv dvb fvt mxu m4u pyv uvu uvvu viv webm f4v fli flv m4v mkv mk3d mks mng asf asx avi vob wmv wm wmx wvx movie smv
 AddIconByType (video,{FOLDERNAME}/theme/icons/video.png) video/*
 
 
