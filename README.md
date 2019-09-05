@@ -2,15 +2,15 @@
 
 apaxy is a customisable theme built to enhance the experience of browsing web directories. It uses the `mod_autoindex` Apache module - and some css - to override the default style of a directory listing.
 
-## Table of contents
+## Table of Contents
 
-- [features](#features)
-- [installation](#installation)
-- [docker images](#docker-images)
-- [apaxy themes](#apaxy-themes)
-- [mime Types](#mime-types)
-- [troubleshooting](#troubleshooting)
-- [credits](#credits)
+- [Features](#features)
+- [Installation](#installation)
+- [Docker Image](#docker-image)
+- [Apaxy Themes](#apaxy-themes)
+- [Media Types](#media-types)
+- [Troubleshooting](#troubleshooting)
+- [Credits](#credits)
 
 ## Features
 
@@ -86,7 +86,7 @@ Should be changed to...
 * once done, rename `htaccess.txt` to `.htaccess` in the `/share` directory
 * [treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done!
 
-## Docker image
+## Docker Image
 
 A [local Demo](http://localhost:8080) can be started with docker.
 
@@ -94,7 +94,7 @@ A [local Demo](http://localhost:8080) can be started with docker.
 docker-compose up
 ```
 
-## Apaxy themes
+## Apaxy Themes
 
 If you'd like to alter the default Apaxy theme, look in the `/theme` folder and you'll find the following files:
 
@@ -114,7 +114,7 @@ The above rule will assign an icon named `gif.png` from the directory `{FOLDERNA
 
 This url path is relative to your site's root.
 
-## Media types
+## Media Types
 
 The default apaxy theme `/themes/apaxy` has icons in place for the following media types:
 
