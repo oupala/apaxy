@@ -6,9 +6,10 @@ apaxy is a customisable theme built to enhance the experience of browsing web di
 
 - [features](#features)
 - [installation](#installation)
-- [docker images](#docker-images)
+- [docker image](#docker-image)
 - [apaxy themes](#apaxy-themes)
-- [mime Types](#mime-types)
+- [media types](#media-types)
+- [gallery](#gallery)
 - [troubleshooting](#troubleshooting)
 - [credits](#credits)
 
@@ -28,7 +29,7 @@ Apaxy may be basic, but it gives you a great deal of creative freedom when styli
 
 apaxy requires an apache (2.2.11+) enabled http server.
 
-### Quick Start
+### Quick start
 
 If you would like, you can automate the installation of Apaxy with the included `apaxy-configure.sh` script.
 
@@ -42,7 +43,7 @@ Then run the configuration script as a user that can write to the `installWebPat
 
 The files will be copied to the web server directory, and modified automatically based on the settings specified.
 
-### Manual Install
+### Manual install
 
 Let's assume you have a folder named `share` in your server root directory (the path thus being `http://mywebsite.com/share`) that you'd like to use as your listing directory:
 
