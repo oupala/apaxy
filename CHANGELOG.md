@@ -1,3 +1,19 @@
+# [2.2.0](https://github.com/oupala/apaxy/compare/2.1.3...2.2.0) (2020-03-19)
+
+
+### Bug Fixes
+
+* **doc:** fix links in table of content ([cc02ee5](https://github.com/oupala/apaxy/commit/cc02ee5e65359a95315d7d848589d4f4b05b8e14))
+* favicon not being loaded when using Apaxy in a subdirectory ([b9c2521](https://github.com/oupala/apaxy/commit/b9c25218f177b22ba0590706692d47f54986cd0d))
+
+
+### Features
+
+* optimize icons ([49289c4](https://github.com/oupala/apaxy/commit/49289c439cd032a95a4be93e1eb74f0fc7e821ef))
+* **theme:** add a proper dark mode (and globally improve CSS styles) ([301c932](https://github.com/oupala/apaxy/commit/301c9329af1ceea467b786ce287ae5557a08002b))
+
+
+
 ## [2.1.3](https://github.com/oupala/apaxy/compare/2.1.2...2.1.3) (2019-07-18)
 
 
