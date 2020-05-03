@@ -17,11 +17,11 @@ apaxy is a customisable theme built to enhance the experience of browsing web di
 
 Apaxy may be basic, but it gives you a great deal of creative freedom when styling your directory.
 
-* style your directory listing with css
-* make it pop with javascript
-* add welcome messages, download instructions or copyright notices
-* add custom media type icons (requires editing the `.htaccess` file)
-* use custom error pages
+- style your directory listing with css
+- make it pop with javascript
+- add welcome messages, download instructions or copyright notices
+- add custom media type icons (requires editing the `.htaccess` file)
+- use custom error pages
 
 *Sadly, visual style is all you can work with. It's not possible to alter the generated table structure of the listing directory with Apaxy.*
 
@@ -39,7 +39,9 @@ You can set some parameters of `apaxy.config` on the command line instead of the
 
 Then run the configuration script as a user that can write to the `installWebPath` directory. With apache under debian, this would be the `www-data` user:
 
-	$ sudo -u www-data ./apaxy-configure.sh
+```bash
+$ sudo -u www-data ./apaxy-configure.sh
+```
 
 The files will be copied to the web server directory, and modified automatically based on the settings specified.
 
@@ -84,8 +86,8 @@ Should be changed to...
 <script src=/share/theme/apaxy.js></script>
 ```
 
-* once done, rename `htaccess.txt` to `.htaccess` in the `/share` directory
-* [treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done!
+- once done, rename `htaccess.txt` to `.htaccess` in the `/share` directory
+- [treat yo'self](http://25.media.tumblr.com/tumblr_lw7q28y0Mz1qanm80o1_500.gif), you're done!
 
 ## Docker image
 
