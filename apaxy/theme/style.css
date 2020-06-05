@@ -288,6 +288,11 @@ tr.parent a[href^="/"] {
           animation:fadeDown 1s ease;
 }
 
+/* Center elements in error pages */
+.fadeDown .center {
+  text-align: center;
+}
+
 /* Error code display */
 .errorCode {
   font-size: 80px;
