@@ -10,4 +10,3 @@ services:
       - '80:8080'
     volumes:
       - './share/:/usr/local/apache2/htdocs/share/'
-    image: apaxy
