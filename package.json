@@ -21,7 +21,7 @@
     "docker"
   ],
   "author": "Adam Whitcroft",
-  "license": "Unlicense",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/oupala/apaxy/issues"
   },
