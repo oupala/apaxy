@@ -1,5 +1,21 @@
 #
-# apaxy by @adamwhitcroft
+# apaxy
+# Copyright (C) 2021 @adamwhitcroft
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
 #
 # for a full breakdown of the mod_autoindex module:
 # http://apache.org/docs/2.4/mod/mod_autoindex.html
@@ -37,66 +53,68 @@ IndexIgnore .htaccess /theme
 #
 # if your directory is http://mywebsite.com/share/ you would change to:
 #
-# AddIcon /share/theme/icons/blank.png ^^BLANKICON^^
+# AddIcon /share/theme/icons/empty.svg ^^BLANKICON^^
 #
 
-AddIcon {FOLDERNAME}/theme/icons/blank.png ^^BLANKICON^^
-AddIcon {FOLDERNAME}/theme/icons/folder.png ^^DIRECTORY^^
-AddIcon {FOLDERNAME}/theme/icons/folder-home.png ..
+AddIcon {FOLDERNAME}/theme/icons/empty.svg ^^BLANKICON^^
+AddIcon {FOLDERNAME}/theme/icons/folder.svg ^^DIRECTORY^^
+AddIcon {FOLDERNAME}/theme/icons/user-home.svg ..
 
 #
 # unused icons (that should be soon removed)
 #
-# folder-open.png => maybe a js when a folder is hovered
-# folder-page.png
+# folder-open.svg => maybe a js when a folder is hovered
+# folder-document.svg
 #
+
 
 #
 # image
 #
 
-# ext: bmp
-AddIconByType (bmp,{FOLDERNAME}/theme/icons/bmp.png) image/bmp
+# ext: ai eps ps
+AddIconByType (ps,{FOLDERNAME}/theme/icons/image-x-eps.svg) application/postscript
 
-# ext: svg svgz
-AddIconByType (draw,{FOLDERNAME}/theme/icons/draw.png) image/svg+xml
+# ext: bmp
+AddIconByType (bmp,{FOLDERNAME}/theme/icons/image-bmp.svg) image/bmp
 
 # ext: gif
-AddIconByType (gif,{FOLDERNAME}/theme/icons/gif.png) image/gif
+AddIconByType (gif,{FOLDERNAME}/theme/icons/image-gif.svg) image/gif
 
 # ext: ico
-AddIconByType (ico,{FOLDERNAME}/theme/icons/ico.png) image/x-icon
+AddIconByType (ico,{FOLDERNAME}/theme/icons/image-x-ico.svg) image/x-icon
 
 # ext: jpg jpeg jpe
-AddIconByType (jpg,{FOLDERNAME}/theme/icons/jpg.png) image/jpeg
+AddIconByType (jpg,{FOLDERNAME}/theme/icons/image-jpeg.svg) image/jpeg
 
 # ext: png
-AddIconByType (png,{FOLDERNAME}/theme/icons/png.png) image/png
-
-# ext: ai eps ps
-AddIconByType (ps,{FOLDERNAME}/theme/icons/eps.png) application/postscript
+AddIconByType (png,{FOLDERNAME}/theme/icons/image-png.svg) image/png
 
 # ext: psd
-AddIconByType (psd,{FOLDERNAME}/theme/icons/psd.png) image/vnd.adobe.photoshop
+AddIconByType (psd,{FOLDERNAME}/theme/icons/image-x-psd.svg) image/vnd.adobe.photoshop
+
+# ext: svg svgz
+AddIconByType (draw,{FOLDERNAME}/theme/icons/x-office-drawing.svg) image/svg+xml
 
 # ext: tiff tif
-AddIconByType (tiff,{FOLDERNAME}/theme/icons/tiff.png) image/tiff
+AddIconByType (tiff,{FOLDERNAME}/theme/icons/image-tiff.svg) image/tiff
 
-# oti media type bug in apache, fallback to AddIcon
-# ext: oti
-AddIcon {FOLDERNAME}/theme/icons/image.png .oti
+# xcf media type not yet included in apache, fallback to AddIcon
+# ext: xcf
+#AddIconByType (xcf,{FOLDERNAME}/theme/icons/image-x-xcf.svg) image/x-xcf
+AddIcon {FOLDERNAME}/theme/icons/image-x-xcf.svg .xcf
 
 # all other images
-# ext: bmp cgm g3 gif ief jpeg jpg jpe ktx png btif sgi svg svgz tiff tif psd uvi uvvi uvg uvvg djvu djv sub dwg dxf fbs fpx fst mmr rlc mdi wdp npx wbmp xif webp 3ds ras cmx fh fhc fh4 fh5 fh7 ico sid pcx pic pct pnm pbm pgm ppm rgb tga xbm xpmxwd
+# ext: bmp cgm g3 gif ief jpeg jpg jpe ktx png btif sgi svg svgz tiff tif psd uvi uvvi uvg uvvg djvu djv sub dwg dxf fbs fpx fst mmr rlc mdi wdp npx wbmp xif webp 3ds ras cmx fh fhc fh4 fh5 fh7 ico sid pcx pic pct pnm pbm pgm ppm rgb tga xbm xpm xwd
 # ext: odg
 # ext: otg
 # ext: odi
 # ext: oti
-AddIconByType (image,{FOLDERNAME}/theme/icons/image.png) image/* \
-                                                         application/vnd.oasis.opendocument.graphics \
-                                                         application/vnd.oasis.opendocument.graphics-template \
-                                                         application/vnd.oasis.opendocument.image \
-                                                         application/vnd.oasis.opendocument.image-template
+AddIconByType (image,{FOLDERNAME}/theme/icons/image-x-generic.svg) image/* \
+                                                                   application/vnd.oasis.opendocument.graphics \
+                                                                   application/vnd.oasis.opendocument.graphics-template \
+                                                                   application/vnd.oasis.opendocument.image \
+                                                                   application/vnd.oasis.opendocument.image-template
 
 
 #
@@ -107,26 +125,26 @@ AddIconByType (image,{FOLDERNAME}/theme/icons/image.png) image/* \
 # ext: m3u
 # ext: m3u8
 # ext: pls
-AddIconByType (playlist,{FOLDERNAME}/theme/icons/playlist.png) audio/x-mpegurl \
-                                                               application/vnd.apple.mpegurl \
-                                                               application/pls+xml
+AddIconByType (playlist,{FOLDERNAME}/theme/icons/audio-x-mp3-playlist.svg) audio/x-mpegurl \
+                                                                           application/vnd.apple.mpegurl \
+                                                                           application/pls+xml
 
 # all audio
 # ext: adp au snd mid midi kar rmi m4a mp4a mpga mp2 mp2a mp3 m2a m3a oga ogg spx s3m sil uva uvva eol dra dts dtshd lvp pya ecelp4800 ecelp7470 ecelp9600 rip weba aac aif aiff aifc caf flac mka m3u wax wma xm rmp ram ra wav
-AddIconByType (audio,{FOLDERNAME}/theme/icons/audio.png) audio/*
+AddIconByType (audio,{FOLDERNAME}/theme/icons/audio-x-generic.svg) audio/*
 
 
 #
 # video
 #
 
-# audio playlist
+# video playlist
 # ext: mxu m4u
-AddIconByType (playlist,{FOLDERNAME}/theme/icons/video.png) video/vnd.mpegurl
+AddIconByType (playlist,{FOLDERNAME}/theme/icons/video-x-generic.svg) video/vnd.mpegurl
 
 # all video
 # ext: 3g2 3gp h261 h263 h264 jpgv jpm jpgm mj2 mjp2 mp4 mp4v mpg4 mpeg mpg mpe m1v m2v ogv qt mov uvh uvvh uvm uvvm uvp uvvp uvs uvvs uvv uvvv dvb fvt mxu m4u pyv uvu uvvu viv webm f4v fli flv m4v mkv mk3d mks mng asf asx avi vob wmv wm wmx wvx movie smv
-AddIconByType (video,{FOLDERNAME}/theme/icons/video.png) video/*
+AddIconByType (video,{FOLDERNAME}/theme/icons/video-x-generic.svg) video/*
 
 
 #
@@ -136,36 +154,32 @@ AddIconByType (video,{FOLDERNAME}/theme/icons/video.png) video/*
 # ext: html htm
 # ext: xhtml xht
 # ext: uri uris urls
-AddIconByType (html,{FOLDERNAME}/theme/icons/html.png) text/html \
-                                                       application/xhtml+xml \
-                                                       text/uri-list
+AddIconByType (html,{FOLDERNAME}/theme/icons/text-html.svg) text/html \
+                                                            application/xhtml+xml \
+                                                            text/uri-list
 
 # ext: rss
 # ext: atom
-AddIconByType (rss,{FOLDERNAME}/theme/icons/rss.png) application/rss+xml \
-                                                     application/atom+xml
+AddIconByType (rss,{FOLDERNAME}/theme/icons/application-rss+xml.svg) application/rss+xml \
+                                                                     application/atom+xml
 
 # ext: ics ifb
 # ext: vcs
-AddIconByType (vcal,{FOLDERNAME}/theme/icons/vcal.png) text/calendar \
-                                                       text/x-vcalendar
+AddIconByType (vcal,{FOLDERNAME}/theme/icons/evolution-calendar.svg) text/calendar \
+                                                                     text/x-vcalendar
 
 # ext: vcard
 # ext: vcf
-AddIconByType (vcard,{FOLDERNAME}/theme/icons/vcard.png) text/vcard \
-                                                         text/x-vcard
+AddIconByType (vcard,{FOLDERNAME}/theme/icons/addressbook.svg) text/vcard \
+                                                               text/x-vcard
 
 # ext: torrent
-AddIconByType (torrent,{FOLDERNAME}/theme/icons/torrent.png) application/x-bittorrent
+AddIconByType (torrent,{FOLDERNAME}/theme/icons/application-x-bittorrent.svg) application/x-bittorrent
 
 
 #
 # office
 #
-
-# otc media type bug in apache, fallback to AddIcon
-# ext: otc
-AddIcon {FOLDERNAME}/theme/icons/calc.png .otc
 
 # ext: odc
 # ext: otc
@@ -176,15 +190,15 @@ AddIcon {FOLDERNAME}/theme/icons/calc.png .otc
 # ext: csv
 # ext: xls xlm xla xlc xlt xlw
 # ext: xlsx
-AddIconByType (calc,{FOLDERNAME}/theme/icons/calc.png) application/vnd.oasis.opendocument.chart \
-                                                       application/vnd.oasis.opendocument.chart-template \
-                                                       application/vnd.oasis.opendocument.formula \
-                                                       application/vnd.oasis.opendocument.formula-template \
-                                                       application/vnd.oasis.opendocument.spreadsheet \
-                                                       application/vnd.oasis.opendocument.spreadsheet-template \
-                                                       text/csv \
-                                                       application/vnd.ms-excel \
-                                                       application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+AddIconByType (calc,{FOLDERNAME}/theme/icons/x-office-spreadsheet.svg) application/vnd.oasis.opendocument.chart \
+                                                                       application/vnd.oasis.opendocument.chart-template \
+                                                                       application/vnd.oasis.opendocument.formula \
+                                                                       application/vnd.oasis.opendocument.formula-template \
+                                                                       application/vnd.oasis.opendocument.spreadsheet \
+                                                                       application/vnd.oasis.opendocument.spreadsheet-template \
+                                                                       text/csv \
+                                                                       application/vnd.ms-excel \
+                                                                       application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 # ext: odt
 # ext: odm
@@ -192,40 +206,39 @@ AddIconByType (calc,{FOLDERNAME}/theme/icons/calc.png) application/vnd.oasis.ope
 # ext: oth
 # ext: doc dot
 # ext: docx
-AddIconByType (doc,{FOLDERNAME}/theme/icons/doc.png) application/vnd.oasis.opendocument.text \
-                                                     application/vnd.oasis.opendocument.text-master \
-                                                     application/vnd.oasis.opendocument.text-template \
-                                                     application/vnd.oasis.opendocument.text-web \
-                                                     application/msword \
-                                                     application/vnd.openxmlformats-officedocument.wordprocessingml.document
+AddIconByType (doc,{FOLDERNAME}/theme/icons/x-office-document.svg) application/vnd.oasis.opendocument.text \
+                                                                   application/vnd.oasis.opendocument.text-master \
+                                                                   application/vnd.oasis.opendocument.text-template \
+                                                                   application/vnd.oasis.opendocument.text-web \
+                                                                   application/msword \
+                                                                   application/vnd.openxmlformats-officedocument.wordprocessingml.document
 
 # ext: odp
 # ext: otp
 # ext: ppt pps pot
 # ext: pptx
 # ext: ppsx
-AddIconByType (slideshow,{FOLDERNAME}/theme/icons/pres.png) application/vnd.oasis.opendocument.presentation \
-                                                            application/vnd.oasis.opendocument.presentation-template \
-                                                            application/vnd.ms-powerpoint \
-\
-                                                            application/vnd.openxmlformats-officedocument.presentationml.presentation \
-                                                            application/vnd.openxmlformats-officedocument.presentationml.slideshow
+AddIconByType (slideshow,{FOLDERNAME}/theme/icons/x-office-presentation.svg) application/vnd.oasis.opendocument.presentation \
+                                                                             application/vnd.oasis.opendocument.presentation-template \
+                                                                             application/vnd.ms-powerpoint \
+                                                                             application/vnd.openxmlformats-officedocument.presentationml.presentation \
+                                                                             application/vnd.openxmlformats-officedocument.presentationml.slideshow
 
 # ext: mdb
 # ext: odb
-AddIconByType (database,{FOLDERNAME}/theme/icons/unknown.png) application/x-msaccess \
-                                                              application/vnd.oasis.opendocument.database
+AddIconByType (database,{FOLDERNAME}/theme/icons/text-x-sql.svg) application/x-msaccess \
+                                                                 application/vnd.oasis.opendocument.database
 
 # ext: pdf
-AddIconByType (pdf,{FOLDERNAME}/theme/icons/pdf.png) application/pdf
+AddIconByType (pdf,{FOLDERNAME}/theme/icons/application-pdf.svg) application/pdf
 
 # ext: rtf
-AddIconByType (rtf,{FOLDERNAME}/theme/icons/rtf.png) application/rtf
+AddIconByType (rtf,{FOLDERNAME}/theme/icons/text-richtext.svg) application/rtf
 
 # ext: latex
 # ext: tex
-AddIconByType (tex,{FOLDERNAME}/theme/icons/tex.png) application/x-latex \
-                                                     application/x-tex
+AddIconByType (tex,{FOLDERNAME}/theme/icons/text-x-tex.svg) application/x-latex \
+                                                            application/x-tex
 
 
 #
@@ -234,71 +247,66 @@ AddIconByType (tex,{FOLDERNAME}/theme/icons/tex.png) application/x-latex \
 
 # h media type not yet included in apache, fallback to AddIcon
 # ext: h
-#AddIconByType (h,{FOLDERNAME}/theme/icons/h.png) text/x-h
-AddIcon {FOLDERNAME}/theme/icons/h.png .h
+#AddIconByType (h,{FOLDERNAME}/theme/icons/text-x-chdr.svg) text/x-h
+AddIcon {FOLDERNAME}/theme/icons/text-x-chdr.svg .h
 
 # hpp files do not have a specific media type, fallback to AddIcon
 # ext: hpp
-AddIcon {FOLDERNAME}/theme/icons/hpp.png .hpp
+AddIcon {FOLDERNAME}/theme/icons/text-x-c++hdr.svg .hpp
 
 # cpp files do not have a specific media type, fallback to AddIcon
 # ext: cpp
-AddIcon {FOLDERNAME}/theme/icons/cpp.png .cpp
-
-# c media type bug in apache, fallback to AddIcon
-# ext: c
-AddIcon {FOLDERNAME}/theme/icons/c.png .c
+AddIcon {FOLDERNAME}/theme/icons/text-x-c++.svg .cpp
 
 # ext: c cc cxx cpp h hh dic
-AddIconByType (c,{FOLDERNAME}/theme/icons/c.png) text/x-c
+AddIconByType (c,{FOLDERNAME}/theme/icons/text-x-c.svg) text/x-c
 
 # ext: java
 # ext: jar
 # ext: class
-AddIconByType (java,{FOLDERNAME}/theme/icons/java.png) text/x-java-source \
-                                                       application/java-archive \
-                                                       application/java-vm
+AddIconByType (java,{FOLDERNAME}/theme/icons/text-x-java.svg) text/x-java-source \
+                                                              application/java-archive \
+                                                              application/java-vm
 
 # sass and scss files do not have a specific media type, fallback to AddIcon
 # ext: sass scss
-AddIcon {FOLDERNAME}/theme/icons/css.png .sass .scss
+AddIcon {FOLDERNAME}/theme/icons/text-css.svg .sass .scss
 
 # ext: css
-AddIconByType (css,{FOLDERNAME}/theme/icons/css.png) text/css
+AddIconByType (css,{FOLDERNAME}/theme/icons/text-css.svg) text/css
 
 # ext: js
-AddIconByType (js,{FOLDERNAME}/theme/icons/js.png) application/javascript
-
 # ext: json
-AddIconByType (json,{FOLDERNAME}/theme/icons/json.png) application/json
+AddIconByType (js,{FOLDERNAME}/theme/icons/text-x-javascript.svg) application/javascript \
+                                                                  application/json
 
 # diff and patch files do not have a specific media type, fallback to AddIcon
 # ext: diff patch
-AddIcon {FOLDERNAME}/theme/icons/diff.png .diff .patch
+AddIcon {FOLDERNAME}/theme/icons/text-x-source.svg .diff .patch
 
 # makefile files do not have a specific media type, fallback to AddIcon
 # ext: Makefile
-AddIcon {FOLDERNAME}/theme/icons/makefile.png Makefile
+AddIcon {FOLDERNAME}/theme/icons/text-x-makefile.svg Makefile
 
 # php files do not have a specific media type, fallback to AddIcon
 # ext: php phtml
-AddIcon {FOLDERNAME}/theme/icons/php.png .php .phtml
+AddIcon {FOLDERNAME}/theme/icons/application-x-php.svg .php .phtml
 
 # python files do not have a specific media type, fallback to AddIcon
 # ext: py
-AddIcon {FOLDERNAME}/theme/icons/py.png .py
+AddIcon {FOLDERNAME}/theme/icons/text-x-python.svg .py
 
 # ruby files do not have a specific media type, fallback to AddIcon
 # ext: rb
-AddIcon {FOLDERNAME}/theme/icons/rb.png .rb
+AddIcon {FOLDERNAME}/theme/icons/application-x-ruby.svg .rb
 
 # ext: sql
-AddIconByType (sql,{FOLDERNAME}/theme/icons/sql.png) application/x-sql
+AddIconByType (sql,{FOLDERNAME}/theme/icons/text-x-sql.svg) application/x-sql
 
 # ext: xml xsl
 # ext: dtd
-AddIconByType (xml,{FOLDERNAME}/theme/icons/xml.png) application/xml \
-                                                     application/xml-dtd
+AddIconByType (xml,{FOLDERNAME}/theme/icons/text-xml.svg) application/xml \
+                                                          application/xml-dtd
 
 
 #
@@ -307,76 +315,66 @@ AddIconByType (xml,{FOLDERNAME}/theme/icons/xml.png) application/xml \
 
 # pkg files do not have a specific media type, fallback to AddIcon
 # ext: pkg
-AddIcon {FOLDERNAME}/theme/icons/package.png .pkg
+AddIcon {FOLDERNAME}/theme/icons/package-x-generic.svg .pkg
 
 # ext: bin dms lrf mar so dist distz pkg bpk dump elc deploy
-AddIconByType (bin,{FOLDERNAME}/theme/icons/bin.png) application/octet-stream
-
-# log files do not have a specific media type, fallback to AddIcon
-# ext: log
-AddIcon {FOLDERNAME}/theme/icons/log.png .log
+AddIconByType (bin,{FOLDERNAME}/theme/icons/multipart-encrypted.svg) application/octet-stream
 
 # ext: iso
-AddIconByType (cd,{FOLDERNAME}/theme/icons/cd.png) application/x-iso9660-image
+AddIconByType (cd,{FOLDERNAME}/theme/icons/application-x-cd-image.svg) application/x-iso9660-image
 
 # ext: deb udeb
-AddIconByType (deb,{FOLDERNAME}/theme/icons/deb.png) application/x-debian-package
+AddIconByType (deb,{FOLDERNAME}/theme/icons/deb.svg) application/x-debian-package
 
 # msi files do not have a specific media type, fallback to AddIcon
 # ext: msi
-AddIcon {FOLDERNAME}/theme/icons/install.png .msi
-
-# exe media type bug in apache, fallback to AddIcon
-# ext: exe
-AddIcon {FOLDERNAME}/theme/icons/exe.png .exe
+AddIcon {FOLDERNAME}/theme/icons/text-x-install.svg .msi
 
 # ext: exe dll com bat msi
-AddIconByType (exe,{FOLDERNAME}/theme/icons/exe.png) application/x-msdownload
+AddIconByType (exe,{FOLDERNAME}/theme/icons/application-x-ms-dos-executable.svg) application/x-msdownload
 
 # ext: dmg
 # ext: mpkg
 # ext: apk
-AddIconByType (package,{FOLDERNAME}/theme/icons/package.png) application/x-apple-diskimage \
-                                                             application/vnd.apple.installer+xml \
-                                                             application/vnd.android.package-archive
+AddIconByType (package,{FOLDERNAME}/theme/icons/package-x-generic.svg) application/x-apple-diskimage \
+                                                                       application/vnd.apple.installer+xml \
+                                                                       application/vnd.android.package-archive
 
 # rpm files do not have a specific media type, fallback to AddIcon
 # ext: rpm
-AddIcon {FOLDERNAME}/theme/icons/rpm.png .rpm
+AddIcon {FOLDERNAME}/theme/icons/rpm.svg .rpm
 
 # ext: sh
-AddIconByType (script,{FOLDERNAME}/theme/icons/script.png) application/x-sh
-
-# otf media type bug in apache, fallback to AddIcon
-# ext: otf
-AddIcon {FOLDERNAME}/theme/icons/font.png .otf
+AddIconByType (script,{FOLDERNAME}/theme/icons/text-x-script.svg) application/x-sh
 
 # ext: ttc otf ttf woff2 woff
-AddIconByType (font,{FOLDERNAME}/theme/icons/font.png) font/*
+AddIconByType (font,{FOLDERNAME}/theme/icons/font-x-generic.svg) font/*
 
 #
 # archives
 #
 
-# gzip media type not yet included in apache, fallback to AddIcon
-# ext: gzip gz
-#AddIconByType (gzip,{FOLDERNAME}/theme/icons/gzip.png) application/gzip
-AddIcon {FOLDERNAME}/theme/icons/gzip.png .gzip .gz
+# ext: gz
+AddIconByType (gzip,{FOLDERNAME}/theme/icons/application-x-archive.svg) application/x-gzip
+
+# gzip media type does not include .gzip file extension, fallback to AddIcon
+# ext: gzip
+AddIcon {FOLDERNAME}/theme/icons/application-x-archive.svg .gzip
 
 # ext: rar
-AddIconByType (rar,{FOLDERNAME}/theme/icons/rar.png) application/x-rar-compressed
+AddIconByType (rar,{FOLDERNAME}/theme/icons/application-x-rar.svg) application/x-rar-compressed
 
 # ext: tar
-AddIconByType (tar,{FOLDERNAME}/theme/icons/tar.png) application/x-tar
+AddIconByType (tar,{FOLDERNAME}/theme/icons/application-x-tar.svg) application/x-tar
 
 # ext: zip
-AddIconByType (zip,{FOLDERNAME}/theme/icons/zip.png) application/zip
+AddIconByType (zip,{FOLDERNAME}/theme/icons/application-x-zip.svg) application/zip
 
 # ext: 7z bz bz2 cab
-AddIconByType (archive,{FOLDERNAME}/theme/icons/archive.png) application/x-7z-compressed \
-                                                         application/x-bzip \
-                                                         application/x-bzip2 \
-                                                         application/vnd.ms-cab-compressed
+AddIconByType (archive,{FOLDERNAME}/theme/icons/application-x-archive.svg) application/x-7z-compressed \
+                                                                           application/x-bzip \
+                                                                           application/x-bzip2 \
+                                                                           application/vnd.ms-cab-compressed
 
 
 #
@@ -384,14 +382,14 @@ AddIconByType (archive,{FOLDERNAME}/theme/icons/archive.png) application/x-7z-co
 #
 
 # ext: cbr cba cbt cbz cb7
-AddIconByType (text,{FOLDERNAME}/theme/icons/image.png) application/x-cbr
+AddIconByType (text,{FOLDERNAME}/theme/icons/image-x-generic.svg) application/x-cbr
 
 # ext: epub
 # ext: prc mobi
 # ext: azw
-AddIconByType (text,{FOLDERNAME}/theme/icons/text.png) application/epub+zip \
-                                                       application/x-mobipocket-ebook \
-                                                       application/vnd.amazon.ebook
+AddIconByType (text,{FOLDERNAME}/theme/icons/text-plain.svg) application/epub+zip \
+                                                             application/x-mobipocket-ebook \
+                                                             application/vnd.amazon.ebook
 
 
 #
@@ -400,35 +398,23 @@ AddIconByType (text,{FOLDERNAME}/theme/icons/text.png) application/epub+zip \
 
 # readme files do not have a specific media type, fallback to AddIcon
 # ext: README
-AddIcon {FOLDERNAME}/theme/icons/readme.png README
+AddIcon {FOLDERNAME}/theme/icons/text-x-readme.svg README
 
 # markdown media type not yet included in apache, fallback to AddIcon
 # ext: markdown md
-#AddIconByType (markdown,{FOLDERNAME}/theme/icons/markdown.png) text/mardown
-AddIcon {FOLDERNAME}/theme/icons/markdown.png .markdown .md
-
-# conf media type bug in apache, fallback to AddIcon
-# ext: conf
-AddIcon {FOLDERNAME}/theme/icons/script.png .conf
-
-# for media type bug in apache, fallback to AddIcon
-# ext: for
-AddIcon {FOLDERNAME}/theme/icons/text.png .for
-
-# uu media type bug in apache, fallback to AddIcon
-# ext: uu
-AddIcon {FOLDERNAME}/theme/icons/text.png .uu
+#AddIconByType (markdown,{FOLDERNAME}/theme/icons/text-richtext.svg) text/mardown
+AddIcon {FOLDERNAME}/theme/icons/text-richtext.svg .markdown .md
 
 # this directive has to be at the end of the file because the text/* media type is very generic and should not be interpreted before other more specific directives
 # ext: appcache ics ifb css csv html htm n3 txt text conf def list log in dsc rtx sgml sgm tsv t tr roff man me ms ttl uri uris urls vcard curl dcurl mcurl scurl sub fly flx gv 3dml spot jad wmls wml s asm c cc cxx cpp h hh dic f for f77 f90 java nfo opml p pas etx sfv uu vcs vcf
-AddIconByType (text,{FOLDERNAME}/theme/icons/text.png) text/*
+AddIconByType (text,{FOLDERNAME}/theme/icons/text-plain.svg) text/*
 
 
 #
 # default
 #
 
-DefaultIcon {FOLDERNAME}/theme/icons/default.png
+DefaultIcon {FOLDERNAME}/theme/icons/empty.svg
 
 
 #

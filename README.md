@@ -139,7 +139,7 @@ Find more information in the in the [apache documentation](https://httpd.apache.
 
 apaxy owes its existence to the amazing [h5ai](http://larsjung.de/h5ai/) by [Lars Jung](https://twitter.com/lrsjng). Had I not seen this, I would never have looked into making my own (probably way less useful) version.
 
-[Faenza Icons](http://tiheum.deviantart.com/art/Faenza-Icons-173323228) are used in the `apaxy` theme.
+[Faenza icons](http://tiheum.deviantart.com/art/Faenza-Icons-173323228) are used in the `apaxy` theme. [Faenza icon theme](https://code.google.com/archive/p/faenza-icon-theme/) has been released under GPLv3 licence.
 
 ## Licence
 
