@@ -1,3 +1,19 @@
+# [2.3.0](https://github.com/oupala/apaxy/compare/2.2.0...2.3.0) (2021-04-23)
+
+
+### Bug Fixes
+
+* fix the doctype in the error pages ([0c75e64](https://github.com/oupala/apaxy/commit/0c75e64761939b1b1f02ae08a74bb64772bc4ac0))
+* improve the way Faenza icons are embedded ([060d547](https://github.com/oupala/apaxy/commit/060d5478e46864fdc185e4c29db8d2cfe99eae93)), closes [#143](https://github.com/oupala/apaxy/issues/143)
+* use <div class="center"> instead of <center> ([3bba904](https://github.com/oupala/apaxy/commit/3bba904d33fd4139b2e31f721612484590063cfa))
+
+
+### Features
+
+* switch to GPLv3 licence ([86fc8ee](https://github.com/oupala/apaxy/commit/86fc8ee74db4542f62bc342d960344838bfaf6b2)), closes [#148](https://github.com/oupala/apaxy/issues/148)
+
+
+
 # [2.2.0](https://github.com/oupala/apaxy/compare/2.1.3...2.2.0) (2020-03-19)
 
 
