@@ -33,7 +33,7 @@
 Options +Indexes
 
 # index options
-IndexOptions +Charset=UTF-8 +FancyIndexing +FoldersFirst +HTMLTable +IconsAreLinks +IgnoreCase +NameWidth=* +SuppressDescription +SuppressRules +XHTML
+IndexOptions +Charset=UTF-8 +FancyIndexing +FoldersFirst +HTMLTable +IconsAreLinks +IgnoreCase +NameWidth=* +SuppressDescription +SuppressRules +XHTML -SuppressHTMLPreamble
 
 # favicon & meta viewport
 IndexHeadInsert "\
