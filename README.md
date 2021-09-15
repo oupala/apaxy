@@ -27,7 +27,11 @@ Apaxy may be basic, but it gives you a great deal of creative freedom when styli
 
 ## Installation
 
-apaxy requires an apache (2.2.11+) enabled http server.
+apaxy requires an apache (2.2.11+) http server. The configuration of the apache http server have to set an `AllowOverride` statement for the Apaxy styled folder:
+
+```apache
+AllowOverride Options Indexes FileInfo
+```
 
 ### Quick start
 
