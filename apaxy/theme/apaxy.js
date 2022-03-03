@@ -60,6 +60,23 @@
 	document.addEventListener('readystatechange', function() {
 		if (document.readyState === 'complete') {
 			TableFilter.init();
+			var filterInput = document.getElementById('filter');
+			if ( filterInput.value.trim().length ){
+				filterInput.focus();
+				filterInput.dispatchEvent(new Event('input'));
+			}
+		}
+	});
+
+	// Use Keydown to get special keys like Backspace, Enter, Esc.
+	window.addEventListener('keydown', function (e) {
+		var filterInput = document.getElementById('filter');
+		var isFocused = (document.activeElement === filterInput);
+		if ( !isFocused && String.fromCharCode(e.keyCode).match(/(\w|\s)/g) ) {
+			filterInput.focus();
+		} else {
+			//pressed key is a non-char
+			//e.g. 'esc', 'backspace', 'up arrow'
 		}
 	});
 
