@@ -53,7 +53,7 @@ The files will be copied to the web server directory, and modified automatically
 
 Let's assume you have a folder named `share` in your server root directory (the path thus being `http://mywebsite.com/share`) that you'd like to use as your listing directory:
 
-- [download](https://github.com/oupala/apaxy/archive/master.zip) and unzip apaxy
+- [download](https://github.com/oupala/apaxy/archive/main.zip) and unzip apaxy
 - copy and paste the contents of the `/apaxy` folder to your `/share` folder
 - edit `htaccess.txt` (now in the `/share` folder) and update all instances of paths marked with *{FOLDERNAME}* to point to your site root
 
