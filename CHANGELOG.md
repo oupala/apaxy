@@ -1,3 +1,18 @@
+# [2.4.0](https://github.com/oupala/apaxy/compare/2.3.0...2.4.0) (2022-05-04)
+
+
+### Bug Fixes
+
+* update styles ([ab93a07](https://github.com/oupala/apaxy/commit/ab93a07b3e01032f8cbce5d266f5b49815edab1a))
+
+
+### Features
+
+* filter auto select on key down ([9debee6](https://github.com/oupala/apaxy/commit/9debee6005ab648d57da017c4f29c7fa507da6a8))
+* prevent from suppressing HTML preamble ([bbe754b](https://github.com/oupala/apaxy/commit/bbe754bf34aa16bdfcac1a9c4cdcefbadbeacad8)), closes [#149](https://github.com/oupala/apaxy/issues/149)
+
+
+
 # [2.3.0](https://github.com/oupala/apaxy/compare/2.2.0...2.3.0) (2021-04-23)
 
 
