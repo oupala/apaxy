@@ -164,7 +164,6 @@ th {
 }
 
 /* 2nd Column: Filename */
-
 th + th {
   width: 65%;
 }
@@ -178,11 +177,7 @@ th + th + th + th {
   width: 5%;
 }
 
-tr th:first-of-type {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
+tr th:first-of-type,
 tr td:first-of-type {
   padding-left: 10px;
   padding-right: 10px;
@@ -234,6 +229,9 @@ tr.parent a[href^="/"] {
   body {
     padding: 10px;
   }
+  /* 2nd Column: Filename */
+  .indexcolname { width: 95%; }
+  /* 3rd Column: Last Modified */
   .indexcollastmod { display: none; }
   .wrapper { max-width: 100%; }
 }
@@ -320,7 +318,6 @@ tr.parent a[href^="/"] {
 \*------------------------------------*/
 
 .breadcrumb {
-  white-space: nowrap;
   padding: 0;
   margin: 0;
 }
@@ -332,6 +329,7 @@ tr.parent a[href^="/"] {
   margin: 0 9px 20px -10px;
   padding: 0 15px;
   position: relative;
+  white-space: nowrap;
 }
 @media (prefers-color-scheme: dark) {
   .breadcrumb li {
