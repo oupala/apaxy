@@ -107,3 +107,13 @@ if (uri.substring(uri.length-1) != '/'){
             a.href =  uri + '/' + a.getAttribute('href',2);
         }
 }
+
+// removing the slash at the end of folder name
+var value, node, elements = document.getElementsByTagName('a');
+for (var i = 0, iLen = elements.length; i < iLen; i++) {
+    node = elements[i].firstChild;// get element node
+    value = node && 3 == node.nodeType ? node.nodeValue : '';
+    if (value && '/' == value.substring(value.length - 1)) {
+        node.nodeValue = value.substring(0, value.length - 1);
+    };
+};
