@@ -99,11 +99,3 @@ arr.forEach(function(value){
         cont++;
 });
 document.getElementById("breadcrumb").innerHTML = bread;
-if (uri.substring(uri.length-1) != '/'){
-        var indexes = document.getElementsByClassName('indexcolname'),
-        i = indexes.length;
-        while (i--){
-            var a = indexes[i].getElementsByTagName('a')[0];
-            a.href =  uri + '/' + a.getAttribute('href',2);
-        }
-}
