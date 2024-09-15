@@ -1,3 +1,20 @@
+# [2.5.0](https://github.com/oupala/apaxy/compare/2.4.0...2.5.0) (2024-09-15)
+
+
+### Bug Fixes
+
+* Fixed typo in header ([cd741bc](https://github.com/oupala/apaxy/commit/cd741bcfc625b6120ff34c4d0b0147846aefb5d6))
+* remove useless code for fixing hrefs ([b7d7d2a](https://github.com/oupala/apaxy/commit/b7d7d2aeb861e2b553546d089271d80b32b8e9c3))
+* rendering on small (mobile) screens ([95ad6b9](https://github.com/oupala/apaxy/commit/95ad6b92be4eaa7b18394390bcc0a121d1342a88))
+* update the required Apache version in README ([9ed650a](https://github.com/oupala/apaxy/commit/9ed650a4effc47c1696530f2f4baed130340aa86))
+
+
+### Features
+
+* HEIC files and uppercase filenames for LightGallery ([b76dc3b](https://github.com/oupala/apaxy/commit/b76dc3be4aa596e6313c063d15124eb65fcdedaf))
+
+
+
 # [2.4.0](https://github.com/oupala/apaxy/compare/2.3.0...2.4.0) (2022-05-04)
 
 
