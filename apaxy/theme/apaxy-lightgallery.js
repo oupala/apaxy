@@ -1,6 +1,6 @@
 var imageSelector = [
-    'tr:not(.parent) td.indexcolname a[href$=".gif"]'
-    'tr:not(.parent) td.indexcolname a[href$=".GIF"]'
+    'tr:not(.parent) td.indexcolname a[href$=".gif"]',
+    'tr:not(.parent) td.indexcolname a[href$=".GIF"]',
     'tr:not(.parent) td.indexcolname a[href$=".heic"]',
     'tr:not(.parent) td.indexcolname a[href$=".HEIC"]',
     'tr:not(.parent) td.indexcolname a[href$=".jpg"]',
