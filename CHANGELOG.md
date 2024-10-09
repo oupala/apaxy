@@ -1,3 +1,12 @@
+## [2.5.1](https://github.com/oupala/apaxy/compare/2.5.0...2.5.1) (2024-10-09)
+
+
+### Bug Fixes
+
+* lightgallery feature ([c7a1221](https://github.com/oupala/apaxy/commit/c7a1221bc7d92f6611a2d80255b3634e7f42d945)), closes [#160](https://github.com/oupala/apaxy/issues/160)
+
+
+
 # [2.5.0](https://github.com/oupala/apaxy/compare/2.4.0...2.5.0) (2024-09-15)
 
 
